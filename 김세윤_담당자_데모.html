@@ -1,0 +1,1796 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+<title>세일즈 일일 리포트</title>
+
+<!-- ==== 홈 화면에 추가했을 때 "진짜 앱"처럼 보이게 하는 설정 ====
+     아이폰: Safari에서 열고 공유(↑) 버튼 → "홈 화면에 추가" 하면,
+     주소창/탭 표시줄 없이 전체화면 앱처럼 실행됩니다.
+     시연 녹화하실 땐 Safari에서 바로 열지 마시고, 꼭 홈 화면 아이콘으로
+     실행한 뒤 녹화하시면 훨씬 "앱 같은" 느낌이 납니다. -->
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="세일즈리포트">
+<meta name="theme-color" content="#2563eb">
+<link rel="apple-touch-icon" href="data:image/png;base64,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">
+<link rel="icon" href="data:image/png;base64,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">
+<link rel="manifest" href="data:application/manifest+json;base64,eyJuYW1lIjogIuyEuOydvOymiCDsnbzsnbwg66as7Y+s7Yq4IiwgInNob3J0X25hbWUiOiAi7IS47J287KaI66as7Y+s7Yq4IiwgInN0YXJ0X3VybCI6ICIuIiwgImRpc3BsYXkiOiAic3RhbmRhbG9uZSIsICJiYWNrZ3JvdW5kX2NvbG9yIjogIiNmNGY2ZmEiLCAidGhlbWVfY29sb3IiOiAiIzI1NjNlYiIsICJpY29ucyI6IFt7InNyYyI6ICJkYXRhOmltYWdlL3BuZztiYXNlNjQsaVZCT1J3MEtHZ29BQUFBTlNVaEVVZ0FBQWdBQUFBSUFDQUlBQUFCN0drT3RBQUFKd0VsRVFWUjRuTzNkUGNybFpCaUE0VVFqRHJvSFVWeUc0QUtzckd5bW1VbzNJQzVnN0FSWFlDV1cxbFpUdVE4ck4yQTMrQVBHNHF0VXZxbjB6VVB1NjFyQk9jbUJteWM4Yjg3K3dmT1hHd0E5eDNhZVYzOEdBQzd3MnRVZkFJQnJDQUJBbEFBQVJBa0FRSlFBQUVRSkFFRFVzZHNDQlVneUFRQkVDUUJBbEFBQVJBa0FRSlFBQUVRSkFFRFVzVmtEQlVnNjlxcy9BUUNYOEFnSUlFb0FBS0lFQUNCS0FBQ2lCQUFneWhvb1FKUUpBQ0RLT1FDQUtCTUFRSlFBQUVRSkFFQ1VBQUJFV1FNRmlESUJBRVFKQUVDVWN3QUFVU1lBZ0NnQkFJZ1NBSUFvYTZBQVVTWUFnQ2dCQUlnU0FJQW81d0FBb2t3QUFGRUNBQkJsRFJRZ3lnUUFFQ1VBQUZFQ0FCQWxBQUJSemdFQVJKa0FBS0tzZ1FKRW1RQUFvZ1FBSUVvQUFLSUVBQ0JLQUFDaW5BTUFpRHEyMHg0b1FKRkhRQUJSQWdBUUpRQUFVUUlBRUNVQUFGRUNBQkRsSEFCQWxOZEJBMFI1QkFRUUpRQUFVUUlBRUNVQUFGRUNBQkJsRFJRZ3lob29RSlJIUUFCUkFnQVFKUUFBVVFJQUVDVUFBRkVDQUJCMTdOWkFBWkpNQUFCUkFnQVFKUUFBVVFJQUVDVUFBRkVDQUJEbGJhQUFVZjRQQUNES0l5Q0FLQUVBaUJJQWdDZ0JBSWdTQUlBb2E2QUFVU1lBZ0NqbkFBQ2lUQUFBVVFJQUVDVUFBRkVDQUJCbERSUWd5Z1FBRUNVQUFGSE9BUUJFbVFBQW9nUUFJRW9BQUtLc2dRSkVtUUFBb2dRQUlFb0FBS0tjQXdDSU1nRUFSQWtBUU5TeG5mWkFBWXBNQUFCUkFnQVFKUUFBVVFJQUVPVWNBRUNVQ1FBZ3l0dEFBYUpNQUFCUkFnQVFKUUFBVVFJQUVDVUFBRkhPQVFCRW1RQUFvcHdEQUlneUFRQkVDUUJBbEFBQVJBa0FRSlExVUlBb0V3QkFsRFZRZ0NnVEFFQ1VBQUJFQ1FCQWxBQUFSQWtBUUpSekFBQlIxa0FCb2p3Q0FvZ1NBSUFvQVFDSUVnQ0FLQUVBaUJJQWdLaGp0d1lLa0dRQ0FJZ1NBSUFvQVFDSUVnQ0FLQUVBaUJJQWdDaHZBd1dJOG44QUFGSEgxUitBeTN6Nnlac2ZmZmpHMVovaW43NzUvcmNmZnZ6ajZrL3hmL242aTdmZWYyZmNjOWZQdjNyNTA4OS9YdjBwdU1DNDN5SUFhd2dBUUpRQUFFUUpBRUNVTmRDd21iZituUHJCYnN3MXJ6SUJBRVE1QjlBMTl0YVAvV0IzdGJ2bVZTWUFnQ2dCQUlnU0FJQW9BUUNJT3JiVC9oZkQzUGszT2ZXcjNmbWE4eWdUQUVDVUFBQkVPUWZBTEhiU0wrR2FONWtBQUtJRUFDQktBQUNpdkEyVVlieVpjajNYdk1vRUFCQWxBQUJSQWdBUTVSd0E0L2hOTHVic1JaWUpBQ0JLQUFDaXJJR0d6YnoxVmhMWGM4MnJUQUFBVVFJQUVDVUFBRkVDQUJEbEhFRFh6RnQvNzUzMG1WL3QzdGVjVnpBQkFFUUpBRUNVY3dETWMrUGY1TXl2NWh4QWxRa0FJRW9BQUtJRUFDREtHaWpqK0UwdVpnMDB5d1FBRUNVQUFGSFdRTU5tM25vcmlldTU1bFVtQUlBb0FRQ0lFZ0NBS0FFQWlISU9vR3ZtcmJlVHZwNXJubVVDQUlpeUJzbzhmcFBydWVaSkpnQ0FLQUVBaUJJQWdDZ0JBSWdTQUlBbzV3Q1l4VTc2SlZ6ekptdWdET1BObE91NTVsVWVBUUZFQ1FCQWxBQUFSQWtBUUpRQUFFUUpBRURVc1Z2L3FocDY2OCtwSCt5K2R0ZTh5Z1FBRUNVQUFGRUNBQkFsQUFCUkFnQVFKUUFBVWNkMjJ2L0ttbm5yenp2L0ptZCtzL1BXMTV6SCtUOEFacm4zL3dITS9HcjN2dWE4Z2tkQUFGRUNBQkFsQUFCUng5VWZBUDdtMmRNbno1NCt1ZnBUUUlJSkFDREtuOEtIdWZVODhLZndWU1lBZ0NqbkFLRE9PWUFzRXdCQWxBQUFSQWtBUUpRQUFFUlpBd1dzZ1VhWkFBQ2lCQUFneWptQUxyZWVCODRCWkprQUFLSUVBQ0JLQUFDaXJJR0d1ZlU4OERiUUtoTUFRSlFBQUVRSkFFQ1Vjd0NBY3dCUkpnQ0FLQUVBaUJJQWdDam5BQ0RQT1lBcUV3QkFsQUFBUkZrRDdYTHJlZUIxMEZrbUFJQW9BUUNJRWdDQUtHdWdrR2NOdE1vRUFCQWxBQUJSQWdBUTVSd0ExRGtIa0dVQ0FJZ1NBSUFvYTZCaEkyLzlkOS8rK3VMRjcxZC9pdi9MOHkvZmZ2ZTkxNi8rRlA5aURiVEtCQUFRSlFBQVVRSUFFQ1VBQUZIT0FUQ08zK1JpemdGa21RQUFvcXlCTW8vZjVIcXVlWklKQUNCS0FBQ2lCQUFnU2dBQW9nUUFJTW81Z0s2WnQ5NU8rbnF1ZWRheG5mYS9xbWJlK2ZQMG0xek5OYS95Q0FnZ1NnQUFvZ1FBSUVvQUFLSUVBQ0JLQUFDaWp0MzJGOFA0VGE1MnV1WlJKZ0NBS0FFQWlCSUFnQ2dCQUlnU0FJQW9BUUNJOHFmd0RITk9mVTNwZjJMbVY3djNOZWR4L2crZ2ErYXQ5Mjc2OVZ6ekxJK0FBS0lFQUNCS0FBQ2lCQUFnU2dBQW9xeUJobzI5OVdNLzJGMVpBNjB5QVFCRU9RZkFPRGYrVGM3OGFzNEJaSmtBQUtJRUFDQktBQUNpQkFBZ3lob293MWhKdklScm5tUUNBSWdTQUlBbzV3QzZadDU2TytucnVlWlpKZ0NBS0FFQWlCSUFnQ2dCQUloeURpQnM1cTEzRG1BOTE3ektCQUFRWlEyVVdhd2tydWVhWjVrQUFLSUVBQ0JLQUFDaUJBQWd5aG9vOC9oTkxtWU50TW9FQUJBbEFBQlJ6Z0V3anQva2VxNTVrd2tBSUVvQUFLSUVBQ0RLR21qWXpGdC83NVhFbVYvdDN0ZWN4NWtBQUtJRUFDQktBQUNpbkFQb21ubnJ2WnQrUGRjOHl3UUFFQ1VBQUZISGR0ci95cHA2Ni8wbUZ6dFAxN3pKQkFBUUpRQUFVUUlBRUNVQUFGSE9BVERPalgrVE03K2Fjd0JaSmdDQUtHOERaUmh2cHJ5RWE1NWtBZ0NJRWdDQUtBRUFpTm8vKy9pWHF6OERBQmN3QVFCRU9RY0FFR1VORkNES0l5Q0FLQUVBaUJJQWdDZ0JBSWdTQUlBb0FRQ0lPblpyb0FCSkpnQ0FLQUVBaUJJQWdDZ0JBSWdTQUlBb0FRQ0k4alpRZ0NqL0J3QVE1UkVRUUpRQUFFUUpBRUNVQUFCRUNRQkFsRFZRZ0NnVEFFQ1Vjd0FBVVNZQWdDZ0JBSWdTQUlBb0FRQ0lFZ0NBS09jQUFLS3NnUUpFZVFRRUVDVUFBRkVDQUJBbEFBQlJBZ0FRWlEwVUlNb0VBQkRsSEFCQWxBa0FJRW9BQUtJRUFDQktBQUNpanUyMEJ3cFFaQUlBaUJJQWdDam5BQUNpVEFBQVVRSUFFQ1VBQUZIZUJnb1FaUUlBaUJJQWdDZ0JBSWh5RGdBZ3lnUUFFQ1VBQUZIV1FBR2lUQUFBVVFJQUVDVUFBRkVDQUJEbEhBQkFsQWtBSU1vYUtFQ1VDUUFnU2dBQW9nUUFJRW9BQUtJRUFDREtPUUNBS0d1Z0FGRWVBUUZFQ1FCQWxBQUFSQWtBUUpRQUFFUUpBRURVc1ZzREJVZ3lBUUJFQ1FCQWxBQUFSQWtBUUpRQUFFUUpBRUNVdDRFQ1JQay9BSUFvajRBQW9nUUFJRW9BQUtJRUFDQktBQUNpQkFBZ3l1dWdBYUpNQUFCUkFnQVFKUUFBVVFJQUVDVUFBRkVDQUJCMWJLYzlVSUFpcjRNR2lQSUlDQ0JLQUFDaUJBQWdTZ0FBb2dRQUlPclliSUVDSkprQUFLS2NBd0NJTWdFQVJBa0FRSlFBQUVRSkFFQ1VOVkNBS0JNQVFKUUFBRVE1QndBUVpRSUFpQklBZ0NnQkFJaXlCZ29RWlFJQWlCSUFnQ2dCQUloeURnQWd5Z1FBRUNVQUFGSFdRQUdpVEFBQVVRSUFFQ1VBQUZFQ0FCRGxIQUJBbEFrQUlNb2FLRUNVQ1FBZ1NnQUFvZ1FBSUVvQUFLSUVBQ0RLT1FDQUtHdWdBRkVlQVFGRUNRQkFsQUFBUkFrQVFKUUFBRVFKQUVEVXNWc0RCVWd5QVFCRUNRQkFsQUFBUkFrQVFKUUFBRVFKQUVEVVgyd1EzTFc1Yjd1RUFBQUFBRWxGVGtTdVFtQ0MiLCAic2l6ZXMiOiAiNTEyeDUxMiIsICJ0eXBlIjogImltYWdlL3BuZyIsICJwdXJwb3NlIjogImFueSBtYXNrYWJsZSJ9XX0=">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+<!-- 위 스크립트: 팀장/부서장 대시보드의 "엑셀 다운로드" 기능에 사용 (SheetJS, 무료 오픈소스) -->
+<style>
+:root{
+  --bg:#f4f6fa; --card:#ffffff; --card2:#f0f3f8; --line:#e2e6ee;
+  --txt:#1a1f2b; --sub:#64708a; --mut:#94a0b5;
+  --acc:#3b82f6; --acc2:#2563eb; --acc-d:#1d4ed8;
+  --ok:#16a34a; --warn:#d97706; --bad:#dc2626; --pur:#7c3aed;
+  --r:14px; --r2:10px;
+}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{margin:0;padding:0;background:var(--bg);color:var(--txt);
+  font-family:-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Malgun Gothic","Segoe UI",Roboto,sans-serif;
+  font-size:15px;line-height:1.5;-webkit-font-smoothing:antialiased;
+  overscroll-behavior-y:none;-webkit-overflow-scrolling:touch}
+/* 홈 화면 앱(standalone) 모드에서 아이폰 당겨서 새로고침/바운스 스크롤 방지 —
+   "진짜 앱" 느낌을 위한 처리입니다. */
+.app{max-width:760px;margin:0 auto;min-height:100vh;display:flex;flex-direction:column}
+.hide{display:none!important}
+button{font-family:inherit;cursor:pointer;border:none;touch-action:manipulation;-webkit-touch-callout:none;transition:transform .08s ease}
+button:active{transform:scale(.96)}
+input,select,textarea{font-family:inherit;font-size:15px}
+
+/* ====== 상단 헤더 ====== */
+.top{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.92);
+  backdrop-filter:blur(10px);border-bottom:1px solid var(--line);
+  padding:calc(12px + env(safe-area-inset-top)) 16px 12px}
+.top-row{display:flex;align-items:center;justify-content:space-between;gap:10px}
+.brand{display:flex;align-items:center;gap:10px;min-width:0}
+.logo{width:32px;height:32px;border-radius:9px;background:linear-gradient(135deg,var(--acc),var(--pur));
+  display:flex;align-items:center;justify-content:center;font-weight:800;font-size:15px;color:#fff;flex-shrink:0}
+.brand h1{font-size:15px;margin:0;font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.brand .sub{font-size:11px;color:var(--sub)}
+.role-tabs{display:flex;gap:6px;margin-top:12px;background:var(--card);padding:4px;border-radius:11px}
+.role-tabs button{flex:1;padding:9px 6px;border-radius:8px;background:transparent;color:var(--sub);
+  font-size:13px;font-weight:600;transition:.15s}
+.role-tabs button.on{background:var(--acc2);color:#fff;box-shadow:0 2px 8px rgba(37,99,235,.4)}
+
+.wrap{flex:1;padding:16px;padding-bottom:40px}
+
+/* ====== 진행바 ====== */
+.prog{display:flex;align-items:center;gap:6px;margin-bottom:18px}
+.prog .bar{flex:1;height:6px;background:var(--card2);border-radius:99px;overflow:hidden}
+.prog .fill{height:100%;background:linear-gradient(90deg,var(--acc),var(--pur));width:0;transition:.3s}
+.prog .pct{font-size:12px;color:var(--sub);font-weight:600;min-width:34px;text-align:right}
+
+/* ====== 카드 ====== */
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:18px;margin-bottom:14px;box-shadow:0 1px 3px rgba(20,30,60,.04),0 6px 20px rgba(20,30,60,.04)}
+.step-head{display:flex;align-items:center;gap:12px;margin-bottom:16px}
+.step-num{width:30px;height:30px;border-radius:9px;background:var(--acc2);color:#fff;
+  display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px;flex-shrink:0}
+.step-head h2{font-size:16px;margin:0}
+.step-head .d{font-size:12px;color:var(--sub)}
+
+label{display:block;font-size:13px;font-weight:600;color:var(--sub);margin:14px 0 7px}
+label .req{color:var(--bad)}
+.auto-hint{font-size:11px;font-weight:600;color:var(--acc2);background:rgba(37,99,235,.08);
+  padding:2px 8px;border-radius:99px;margin-left:6px;white-space:nowrap}
+.inp,select,textarea{width:100%;padding:12px 13px;background:var(--card2);border:1px solid var(--line);
+  border-radius:var(--r2);color:var(--txt);outline:none;transition:.15s}
+.inp:focus,select:focus,textarea:focus{border-color:var(--acc)}
+textarea{resize:vertical;min-height:78px;line-height:1.55}
+select{appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%239aa3b2' stroke-width='3'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat:no-repeat;background-position:right 13px center;padding-right:36px}
+
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{padding:9px 14px;border-radius:99px;background:var(--card2);border:1px solid var(--line);
+  color:var(--sub);font-size:13px;font-weight:600;transition:.15s;cursor:pointer;
+  touch-action:manipulation;-webkit-touch-callout:none;-webkit-user-select:none;user-select:none}
+.chip.on{background:var(--acc2);color:#fff;border-color:var(--acc)}
+.chip:active{transform:scale(.94)}
+
+/* 부서/팀 큰 선택 버튼 */
+.crumb{display:inline-block;font-size:12px;font-weight:600;color:var(--acc2);background:rgba(37,99,235,.08);
+  border:1px solid var(--line);padding:6px 12px;border-radius:99px;margin-bottom:14px}
+
+/* 전역 브레드크럼 */
+.bcrumb{display:flex;align-items:center;flex-wrap:wrap;gap:2px;margin-bottom:12px;
+  background:var(--card);border:1px solid var(--line);border-radius:99px;padding:6px 10px;
+  box-shadow:0 1px 3px rgba(20,30,60,.04)}
+.bc-link{font-size:12px;font-weight:600;color:var(--acc2);background:transparent;padding:5px 10px;border-radius:99px;
+  white-space:nowrap;transition:.12s;max-width:160px;overflow:hidden;text-overflow:ellipsis}
+.bc-link:active{background:rgba(37,99,235,.1)}
+.bc-link.cur{background:var(--acc2);color:#fff}
+.bc-link.bc-empty{color:var(--mut)}
+.bc-sep{color:var(--mut);font-size:12px;padding:0 1px}
+
+/* 다음 안내 + 준비 강조 */
+.next-hint{margin-top:12px;font-size:13px;font-weight:600;color:var(--ok);
+  background:rgba(22,163,74,.08);border:1px solid rgba(22,163,74,.25);padding:10px 13px;border-radius:10px}
+.next-hint.muted{color:var(--sub);background:var(--card2);border-color:var(--line);font-weight:500}
+@keyframes readyPulse{0%,100%{box-shadow:0 0 0 0 rgba(37,99,235,.5)}50%{box-shadow:0 0 0 6px rgba(37,99,235,0)}}
+.btn-pri.ready{animation:readyPulse 1.4s ease-out infinite}
+.big-pick{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:4px}
+.big-chip{display:flex;flex-direction:column;align-items:flex-start;gap:3px;padding:16px 16px;
+  border-radius:13px;background:var(--card2);border:1.5px solid var(--line);color:var(--txt);
+  text-align:left;transition:.15s}
+.big-chip:active{transform:scale(.97)}
+.big-chip.on{background:rgba(37,99,235,.1);border-color:var(--acc);box-shadow:0 3px 14px rgba(37,99,235,.18)}
+.big-chip .bc-ic{font-size:20px}
+.big-chip .bc-t{font-size:15px;font-weight:700}
+.big-chip .bc-s{font-size:11px;color:var(--sub);font-weight:500}
+.big-chip.on .bc-t{color:var(--acc2)}
+
+/* 담당자 선택 버튼 */
+.member-pick{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:4px}
+.member-chip{display:flex;flex-direction:column;align-items:center;gap:7px;padding:14px 8px;
+  border-radius:12px;background:var(--card2);border:1.5px solid var(--line);color:var(--txt);
+  font-size:14px;font-weight:600;transition:.15s}
+.member-chip:active{transform:scale(.96)}
+.member-chip.on{background:rgba(59,130,246,.12);border-color:var(--acc)}
+.member-chip .mc-av{width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;
+  font-size:16px;font-weight:700;color:#fff;background:linear-gradient(135deg,var(--acc),var(--pur))}
+.member-chip.on .mc-av{box-shadow:0 0 0 3px rgba(59,130,246,.3)}
+
+/* 보고 대상 선택 */
+.rpt-targets{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:8px}
+.rpt-opt{padding:16px 14px;border-radius:var(--r2);background:var(--card2);border:2px solid var(--line);
+  text-align:center;transition:.15s}
+.rpt-opt.on{border-color:var(--acc);background:rgba(59,130,246,.12)}
+.rpt-opt .ic{font-size:22px}
+.rpt-opt .t{font-size:14px;font-weight:700;margin-top:6px}
+.rpt-opt .s{font-size:11px;color:var(--sub);margin-top:3px}
+
+/* 항목 토글 */
+.sec-toggle{display:flex;align-items:center;justify-content:space-between;padding:14px;
+  background:var(--card2);border:1px solid var(--line);border-radius:var(--r2);margin-bottom:10px;cursor:pointer;transition:.15s}
+.sec-toggle.on{border-color:var(--acc);background:rgba(59,130,246,.08)}
+.sec-toggle .lbl{display:flex;align-items:center;gap:10px;font-weight:600;font-size:14px}
+.sec-toggle .ic{font-size:18px}
+.sw{width:42px;height:24px;border-radius:99px;background:var(--line);position:relative;transition:.2s;flex-shrink:0}
+.sw::after{content:"";position:absolute;top:2px;left:2px;width:20px;height:20px;border-radius:50%;
+  background:#fff;transition:.2s}
+.sec-toggle.on .sw{background:var(--acc)}
+.sec-toggle.on .sw::after{transform:translateX(18px)}
+
+.sec-body{padding:4px 2px 10px;animation:fade .2s}
+@keyframes fade{from{opacity:0;transform:translateY(-4px)}to{opacity:1;transform:none}}
+
+/* 숫자 스텝퍼 */
+.stp{display:flex;align-items:center;gap:0;background:var(--card2);border:1px solid var(--line);border-radius:var(--r2);overflow:hidden}
+.stp button{width:46px;height:44px;background:transparent;color:var(--acc);font-size:22px;font-weight:600}
+.stp button:active{background:var(--card)}
+.stp input{flex:1;text-align:center;background:transparent;border:none;color:var(--txt);font-weight:700;font-size:16px;width:100%;-moz-appearance:textfield}
+.stp input::-webkit-outer-spin-button,.stp input::-webkit-inner-spin-button{-webkit-appearance:none}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+
+/* 대리점 검색 */
+.ag-search{position:relative}
+.ag-list{max-height:260px;overflow-y:auto;margin-top:8px;border:1px solid var(--line);border-radius:var(--r2)}
+.ag-item{padding:11px 13px;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;gap:10px;cursor:pointer;transition:.1s}
+.ag-item:last-child{border-bottom:none}
+.ag-item:active{background:var(--card2)}
+.ag-item.on{background:rgba(59,130,246,.12)}
+.ag-item .nm{font-weight:600;font-size:14px}
+.ag-item .meta{font-size:11px;color:var(--sub)}
+.ag-item .gr{font-size:11px;padding:2px 8px;border-radius:99px;background:var(--card2);color:var(--sub);flex-shrink:0}
+.selected-ag{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+.tag{display:inline-flex;align-items:center;gap:6px;padding:6px 10px;border-radius:99px;
+  background:var(--acc2);color:#fff;font-size:12px;font-weight:600}
+.tag button{background:rgba(255,255,255,.2);border-radius:50%;width:16px;height:16px;color:#fff;font-size:11px;display:flex;align-items:center;justify-content:center;padding:0}
+
+/* 하단 네비 */
+.nav{position:fixed;bottom:0;left:0;right:0;z-index:60;background:rgba(255,255,255,.96);
+  backdrop-filter:blur(10px);border-top:1px solid var(--line);
+  padding:12px 16px;padding-bottom:calc(12px + env(safe-area-inset-bottom));
+  display:flex;gap:10px;max-width:760px;margin:0 auto}
+/* 카드 내부 인라인 네비 (항상 보이는 진행 버튼) */
+.inline-nav{display:flex;gap:10px;margin-top:18px;padding-top:16px;border-top:1px solid var(--line)}
+.inline-nav .btn-sec{flex:0 0 auto;padding:13px 20px}
+.inline-nav .btn-pri{flex:1;padding:13px}
+.btn{flex:1;padding:14px;border-radius:var(--r2);font-weight:700;font-size:15px;transition:.15s}
+.btn-pri{background:var(--acc2);color:#fff}
+.btn-pri:active{background:var(--acc-d)}
+.btn-pri:disabled{opacity:.4;background:var(--mut)}
+.btn-sec{background:var(--card2);color:var(--txt);border:1px solid var(--line);flex:0 0 auto;padding:14px 22px}
+
+/* 요약 미리보기 */
+.review-block{background:var(--card2);border-radius:var(--r2);padding:14px;margin-bottom:10px}
+.review-block .rh{font-size:13px;font-weight:700;color:var(--acc);margin-bottom:8px;display:flex;align-items:center;gap:8px}
+.review-row{display:flex;justify-content:space-between;gap:12px;font-size:13px;padding:4px 0}
+.review-row .k{color:var(--sub)}
+.review-row .v{font-weight:600;text-align:right}
+.review-txt{font-size:13px;color:var(--txt);white-space:pre-wrap;line-height:1.55}
+
+/* 제출완료 */
+.done{text-align:center;padding:40px 20px}
+.done .big{font-size:60px}
+.done h2{margin:14px 0 6px}
+.done p{color:var(--sub);font-size:14px}
+.recv-pill{display:inline-flex;align-items:center;gap:6px;padding:7px 13px;border-radius:99px;
+  background:var(--card2);font-size:12px;margin:5px}
+
+/* ===== 대시보드(팀장/부서장) ===== */
+.dash-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px;flex-wrap:wrap;gap:10px}
+.dash-head h2{font-size:18px;margin:0}
+.who-sel{display:flex;align-items:center;gap:8px}
+.who-sel select{width:auto;min-width:140px;padding:9px 32px 9px 12px}
+.logged{font-size:12px;font-weight:700;color:var(--acc2);background:rgba(37,99,235,.08);padding:7px 12px;border-radius:99px}
+.logout-btn{font-size:12px;font-weight:600;color:var(--sub);background:var(--card2);border:1px solid var(--line);padding:7px 12px;border-radius:99px}
+.logout-btn:active{background:var(--line)}
+.login-card{max-width:420px;margin:30px auto;text-align:center}
+.login-card .login-ic{font-size:44px}
+.login-card h2{margin:8px 0 4px}
+.login-sub{font-size:13px;color:var(--sub);line-height:1.6;margin:0 0 18px}
+.login-card label{text-align:left}
+.login-note{font-size:11px;color:var(--mut);margin-top:14px;line-height:1.5;background:var(--card2);padding:10px;border-radius:8px}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:16px}
+.stat{background:var(--card);border:1px solid var(--line);border-radius:var(--r2);padding:14px 12px;text-align:center}
+.stat .n{font-size:24px;font-weight:800}
+.stat .l{font-size:11px;color:var(--sub);margin-top:3px}
+.stat.b .n{color:var(--acc)} .stat.g .n{color:var(--ok)} .stat.o .n{color:var(--warn)} .stat.p .n{color:var(--pur)}
+
+.filter-bar{display:flex;gap:8px;overflow-x:auto;padding-bottom:6px;margin-bottom:14px}
+.filter-bar button{padding:8px 14px;border-radius:99px;background:var(--card);border:1px solid var(--line);
+  color:var(--sub);font-size:13px;font-weight:600;white-space:nowrap;flex-shrink:0}
+.filter-bar button.on{background:var(--acc2);color:#fff;border-color:var(--acc)}
+
+/* 기간(일간/주간) 토글 */
+.period-toggle{display:flex;flex-wrap:wrap;gap:6px;background:var(--card2);padding:4px;border-radius:11px;margin-bottom:14px}
+.period-toggle button{flex:1;min-width:80px;padding:10px 6px;border-radius:8px;background:transparent;color:var(--sub);font-size:12px;font-weight:700;transition:.15s;white-space:nowrap}
+.period-toggle button.on{background:var(--card);color:var(--acc2);box-shadow:0 1px 4px rgba(20,30,60,.1)}
+
+/* 팀원/부서원 현황 매트릭스 */
+.mstat-card{padding:16px}
+.mstat-head{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:10px;flex-wrap:wrap}
+.mstat-title{font-size:14px;font-weight:700}
+.mstat-rate{font-size:13px;color:var(--sub)}
+.mstat-rate b{color:var(--txt);font-size:15px}
+.mstat-rate .r-good{color:var(--ok);font-weight:700}
+.mstat-rate .r-mid{color:var(--warn);font-weight:700}
+.mstat-rate .r-low{color:var(--bad);font-weight:700}
+.mstat-bar{height:8px;background:var(--card2);border-radius:99px;overflow:hidden;margin-bottom:12px}
+.mstat-fill{height:100%;background:linear-gradient(90deg,var(--ok),#34d399);transition:.4s}
+.mstat-list{display:flex;flex-direction:column;gap:2px;max-height:340px;overflow-y:auto}
+.mrow{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:9px 8px;border-radius:8px;cursor:pointer;transition:.12s;
+  touch-action:manipulation;-webkit-touch-callout:none;-webkit-user-select:none;user-select:none}
+.mrow.on{background:rgba(34,163,74,.05)}
+.mrow.off{opacity:.62}
+.mrow:hover{background:rgba(79,70,229,.08)}
+.mrow.sel{background:rgba(79,70,229,.14);box-shadow:inset 0 0 0 1.5px var(--acc2,#4f46e5)}
+.mrow:active{transform:scale(.98)}
+.mclear-btn{font-size:11px;font-weight:700;color:var(--acc2,#4f46e5);background:rgba(79,70,229,.1);border:none;border-radius:6px;padding:3px 8px;margin-left:6px;cursor:pointer;vertical-align:middle}
+.mrow-l{display:flex;align-items:center;gap:8px;min-width:0}
+.mdot{width:8px;height:8px;border-radius:50%;background:var(--mut);flex-shrink:0}
+.mdot.g{background:var(--ok);box-shadow:0 0 0 3px rgba(34,163,74,.15)}
+.mname{font-weight:700;font-size:13px}
+
+/* 팀원 선택 시 상단에 보이는 간략 요약 표 */
+.mini-tbl-card{padding:14px}
+.mini-tbl-title{font-size:13px;font-weight:700;margin-bottom:10px}
+.mini-tbl-wrap{overflow-x:auto}
+.mini-tbl{width:100%;border-collapse:collapse;font-size:12.5px}
+.mini-tbl th{text-align:left;padding:6px 10px;color:var(--sub);font-weight:700;border-bottom:1.5px solid var(--line);white-space:nowrap}
+.mini-tbl td{padding:7px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+.mini-tbl td:first-child{white-space:nowrap;color:var(--sub)}
+.mini-tbl tr:last-child td{border-bottom:none}
+.mini-tbl tr:hover td{background:var(--card2)}
+.mteam{font-size:11px;color:var(--sub)}
+.mrow-r{display:flex;align-items:center;gap:5px;flex-shrink:0}
+.mtag{font-size:11px;font-weight:700;padding:2px 7px;border-radius:99px}
+.mtag.promo{background:rgba(59,130,246,.15);color:#2563eb}
+.mtag.inc{background:rgba(34,163,74,.15);color:#16a34a}
+.mtag.note{background:rgba(217,119,6,.15);color:#d97706}
+.mtag.etc{background:rgba(107,114,128,.18);color:#64708a}
+.mtime{font-size:11px;color:var(--mut);margin-left:4px}
+.mwait{font-size:11px;color:var(--mut);background:var(--card2);padding:3px 10px;border-radius:99px}
+.feed-title{font-size:14px;font-weight:700;margin:18px 0 10px}
+
+/* 엑셀 다운로드 (팀장/부서장) */
+.export-bar{display:flex;justify-content:flex-end;margin:-2px 0 12px}
+.xlsx-btn{font-size:12px;font-weight:700;color:#fff;background:linear-gradient(135deg,#16a34a,#15803d);
+  padding:8px 14px;border-radius:99px;display:inline-flex;align-items:center;gap:5px;box-shadow:0 2px 8px rgba(22,163,74,.3)}
+.xlsx-btn:active{transform:scale(.96)}
+
+/* 담당자 작성 화면 — 작성 소요시간 타이머 (플로팅 배너 — 입력을 가리지 않도록
+   화면에 고정된 채 떠 있고, 클릭/터치를 그대로 아래로 통과시킵니다) */
+.form-timer-wrap{position:fixed;top:calc(128px + env(safe-area-inset-top));right:14px;z-index:45;pointer-events:none}
+.form-timer-badge{font-size:11px;font-weight:700;color:#fff;background:rgba(37,99,235,.92);
+  padding:7px 13px;border-radius:99px;display:inline-flex;align-items:center;gap:4px;
+  box-shadow:0 4px 14px rgba(37,99,235,.35);pointer-events:none}
+
+/* 보고 수정 기한 마감 표시 */
+.edit-locked{font-size:11px;font-weight:700;color:var(--mut);background:var(--card2);padding:6px 12px;border-radius:99px;white-space:nowrap}
+.edit-deadline-note{font-size:10px;color:var(--mut);margin-top:3px}
+
+.feed-item{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:16px;margin-bottom:12px;animation:fade .25s}
+.fi-head{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:10px}
+.fi-who{display:flex;align-items:center;gap:10px;min-width:0}
+.avatar{width:36px;height:36px;border-radius:10px;background:linear-gradient(135deg,var(--acc),var(--pur));
+  display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px;color:#fff;flex-shrink:0}
+.fi-who .nm{font-weight:700;font-size:14px}
+.fi-who .mt{font-size:11px;color:var(--sub)}
+.fi-time{font-size:11px;color:var(--mut);text-align:right;flex-shrink:0}
+.badges{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:10px}
+.bdg{font-size:11px;padding:3px 9px;border-radius:99px;font-weight:600}
+.bdg.promo{background:rgba(59,130,246,.18);color:#7dabfb}
+.bdg.inc{background:rgba(34,197,94,.18);color:#5ee08a}
+.bdg.noinc{background:rgba(245,158,11,.18);color:#fbbf24}
+.bdg.note{background:rgba(139,92,246,.18);color:#b794f6}
+.bdg.etc{background:rgba(107,114,128,.2);color:#a1a8b5}
+.bdg.tl{background:rgba(59,130,246,.12);color:var(--sub);border:1px solid var(--line)}
+.bdg.dh{background:rgba(139,92,246,.12);color:var(--pur);border:1px solid var(--line)}
+.fi-section{padding:10px 0;border-top:1px solid var(--line)}
+.fi-section .st{font-size:12px;font-weight:700;color:var(--acc);margin-bottom:6px;display:flex;align-items:center;gap:6px}
+.fi-kv{display:grid;grid-template-columns:auto 1fr;gap:4px 14px;font-size:13px}
+.fi-kv .k{color:var(--sub)}
+.fi-kv .v{font-weight:600}
+.fi-body{font-size:13px;white-space:pre-wrap;color:var(--txt);line-height:1.55}
+.ag-pills{display:flex;flex-wrap:wrap;gap:5px;margin-top:4px}
+.ag-pills span{font-size:11px;padding:3px 8px;border-radius:6px;background:var(--card2);color:var(--sub)}
+.empty{text-align:center;padding:50px 20px;color:var(--mut)}
+.empty .ic{font-size:44px;opacity:.5}
+
+.live-dot{width:8px;height:8px;border-radius:50%;background:var(--ok);display:inline-block;animation:pulse 1.5s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
+
+.toast{position:fixed;bottom:100px;left:50%;transform:translateX(-50%);background:var(--card2);
+  border:1px solid var(--acc);color:var(--txt);padding:12px 18px;border-radius:99px;font-size:13px;font-weight:600;
+  z-index:99;box-shadow:0 8px 30px rgba(20,30,60,.18);animation:toastIn .3s;display:flex;align-items:center;gap:8px}
+@keyframes toastIn{from{opacity:0;transform:translate(-50%,20px)}to{opacity:1;transform:translate(-50%,0)}}
+
+@media(max-width:600px){
+  .stats{grid-template-columns:repeat(2,1fr)}
+  .grid2{grid-template-columns:1fr}
+  .rpt-targets{grid-template-columns:1fr}
+  .member-pick{grid-template-columns:repeat(2,1fr)}
+  .big-pick{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body ontouchstart="">
+<div id="demoGate" style="position:fixed;inset:0;z-index:9999;background:linear-gradient(135deg,#0f172a,#1e2761);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:14px;color:#fff;font-family:inherit;padding:24px;text-align:center">
+  <div style="font-size:42px">🔒</div>
+  <div style="font-size:19px;font-weight:700">세일즈 일일 리포트 — 데모</div>
+  <div style="font-size:13px;color:#b7c3e0">김세윤 선임 (영업1부 · 영업1팀)</div>
+  <input id="demoGatePw" type="password" inputmode="numeric" maxlength="4" placeholder="비밀번호 4자리"
+    style="width:200px;padding:12px;border-radius:10px;border:none;text-align:center;font-size:20px;letter-spacing:6px;margin-top:8px">
+  <button onclick="checkDemoGate()" style="padding:12px 30px;border-radius:10px;border:none;background:#2563eb;color:#fff;font-weight:700;font-size:15px;cursor:pointer">입장하기</button>
+  <div id="demoGateErr" style="color:#f87171;font-size:13px;height:16px"></div>
+</div>
+<script>
+function checkDemoGate(){
+  var v = document.getElementById('demoGatePw').value;
+  if(v === '1111'){
+    document.getElementById('demoGate').style.display = 'none';
+  } else {
+    document.getElementById('demoGateErr').textContent = '비밀번호가 올바르지 않습니다';
+  }
+}
+document.addEventListener('DOMContentLoaded', function(){
+  var pw = document.getElementById('demoGatePw');
+  if(pw){
+    pw.addEventListener('keydown', function(e){ if(e.key === 'Enter') checkDemoGate(); });
+    pw.focus();
+  }
+});
+</script>
+
+<div class="app">
+  <div class="top">
+    <div class="top-row">
+      <div class="brand">
+        <div class="logo">H</div>
+        <div>
+          <h1>세일즈 일일 리포트</h1>
+          <div class="sub">하나투어 영업본부</div>
+        </div>
+      </div>
+      <div style="font-size:12px;color:var(--sub);text-align:right">
+        <span class="live-dot"></span> 실시간<br><span id="todayLbl"></span>
+      </div>
+    </div>
+    <div class="role-tabs">
+      <button data-role="sales" class="on" onclick="setRole('sales')">✍️ 담당자 작성 — 김세윤</button>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <!-- 담당자 작성 영역 -->
+    <div id="salesView"></div>
+    <!-- 팀장 대시보드 -->
+    <div id="leadView" class="hide"></div>
+    <!-- 부서장 대시보드 -->
+    <div id="headView" class="hide"></div>
+  </div>
+
+  <div class="nav hide" id="navBar">
+    <button class="btn btn-sec" id="btnPrev" onclick="step(-1)">이전</button>
+    <button class="btn btn-pri" id="btnNext" onclick="step(1)">다음</button>
+  </div>
+</div>
+<div id="toastHost"></div>
+<script>
+/* ===== 데이터 (서버 연동 시 fetch 로 대체) ===== */
+const DB = {"ag": [["A0865", "새서울여행사", "브랜드몰", "1등급", "김세윤", "영업1팀", "영업1부"], ["A3595", "세주여행사", "브랜드몰", "Royal 등급", "김세윤", "영업1팀", "영업1부"], ["A9BF1", "남강트레블서비스", "브랜드몰", "2등급", "김세윤", "영업1팀", "영업1부"], ["A9EIX", "한국교육여행사", "브랜드몰", "3등급", "김세윤", "영업1팀", "영업1부"], ["A9F92", "오리엔탈[이마트 명일점]", "브랜드몰", "Royal 등급", "김세윤", "영업1팀", "영업1부"], ["A9H5Q", "힐링스토리", "브랜드몰", "2등급", "김세윤", "영업1팀", "영업1부"], ["A9K5V", "케이에이피투어", "브랜드몰", "Royal 등급", "김세윤", "영업1팀", "영업1부"], ["A9KFW", "케이에이피투어[이마트 의정부점]", "공식인증예약센터", "4등급", "김세윤", "영업1팀", "영업1부"], ["A9LNN", "주식회사 퍼즐여행[롯데몰 은평점]", "브랜드몰", "2등급", "김세윤", "영업1팀", "영업1부"], ["PH03529", "트립나우", "브랜드몰", "2등급", "김세윤", "영업1팀", "영업1부"]], "sales": [["김세윤", "영업1팀", "영업1부", "최정수", "김창회"]], "tl": {"영업1팀": "최정수"}, "dh": {"영업1부": "김창회"}};
+// DB.ag = [code,name,type,grade,manager,team,dept], DB.sales=[name,team,dept,teamLead,deptHead]
+// DB.tl = {팀:팀장}, DB.dh = {부:부서장}
+
+const AG = DB.ag.map(a=>({code:a[0],name:a[1],type:a[2],grade:a[3],manager:a[4],team:a[5],dept:a[6]}));
+/* 제외할 부서 (작성/대시보드 모두에서 숨김) */
+const EXCLUDE_DEPTS=['영업기획지원부'];
+const SALES = DB.sales.map(s=>({name:s[0],team:s[1],dept:s[2],teamLead:s[3],deptHead:s[4]}))
+  .filter(s=>!EXCLUDE_DEPTS.includes(s.dept))
+  .sort((a,b)=>a.name.localeCompare(b.name,'ko'));
+const TL = DB.tl, DH = DB.dh;
+/* 부서 표시 순서(지정 순서 우선, 나머지는 뒤에) */
+const DEPT_ORDER=['영업1부'];
+
+/* 동명이인 접미사(A/B/C…) 제거 후 비교: '윤상원B' === '윤상원' */
+function normName(n){ return (n||'').replace(/[A-Z]+$/,'').trim(); }
+/* 담당자(me)의 담당 대리점: 이름 정규화 + 같은 팀 우선 매칭 */
+function myAgencies(){
+  if(!me) return [];
+  const n = normName(me.name);
+  return AG.filter(a=> normName(a.manager)===n && (a.team===me.team || a.team===''||!a.team));
+}
+
+/* ============================================================
+ *  백엔드 연동 (Google Sheets + Apps Script)
+ *  아래 API_URL 을 배포한 Apps Script 웹앱 URL로 교체하세요.
+ *  (Apps Script 편집기 → 배포 → 웹 앱 → URL 복사 → 여기 붙여넣기)
+ * ============================================================ */
+const API_URL = 'https://script.google.com/macros/s/AKfycbxHGcUSE_Pbx197sonCdajCc-65i--dJocjgNMo5IBSPU8u28XkxzapF8ajiRcBNArH3A/exec';
+function apiReady(){ return !!API_URL && !API_URL.includes('여기에'); }
+async function apiGet(action){
+  const res = await fetch(`${API_URL}?action=${encodeURIComponent(action)}`);
+  if(!res.ok) throw new Error('네트워크 오류 ('+res.status+')');
+  return res.json();
+}
+async function apiPost(payload){
+  // text/plain 으로 보내면 브라우저가 프리플라이트(OPTIONS) 없이 전송 → Apps Script와 궁합이 좋음
+  const res = await fetch(API_URL, {
+    method:'POST',
+    headers:{'Content-Type':'text/plain;charset=utf-8'},
+    body: JSON.stringify(payload)
+  });
+  if(!res.ok) throw new Error('네트워크 오류 ('+res.status+')');
+  return res.json();
+}
+
+/* 제출 데이터 저장소: 서버(Google Sheets)에서 불러와 채웁니다 */
+let REPORTS = [];
+let lastSync = null;
+async function loadReports(){
+  if(!apiReady()) return false;
+  try{
+    const data = await apiGet('reports');
+    if(data.ok){
+      REPORTS = (data.reports||[]).map(r=>({...r, ts:new Date(r.ts)}));
+      lastSync = new Date();
+      return true;
+    }
+    toast('⚠️ 데이터를 불러오지 못했습니다: '+(data.msg||''));
+    return false;
+  }catch(err){
+    console.error(err);
+    toast('⚠️ 서버 연결 실패 — 네트워크/API_URL을 확인하세요');
+    return false;
+  }
+}
+/* 대시보드가 열려있는 동안 주기적으로 새 보고를 가져옴 (근-실시간) */
+let pollTimer=null;
+function startPolling(scope){
+  stopPolling();
+  pollTimer = setInterval(async ()=>{
+    const ok = await loadReports();
+    if(ok) (scope==='lead'?renderLead:renderHead)();
+  }, 20000);
+}
+function stopPolling(){ if(pollTimer){ clearInterval(pollTimer); pollTimer=null; } }
+async function manualRefresh(scope){
+  const ok = await loadReports();
+  (scope==='lead'?renderLead:renderHead)();
+  if(ok) toast('🔄 동기화 완료');
+}
+
+/* ===== 상태 ===== */
+let role='sales';
+let curStep=0;
+let myDept=null;       // 선택한 부서
+let myTeam=null;       // 선택한 팀
+let me=null;           // 현재 담당자
+let rptForm=resetForm();
+let editingId=null;    // null=새 보고 작성, 값이 있으면 해당 id 보고를 수정 중
+
+/* ===== ⏱️ 보고 작성 소요시간 측정 (업무 효율성 분석용) =====
+   "보고 항목"(4번째) 단계에 처음 들어오는 순간부터 "제출하기"를 누르는
+   순간까지 걸린 시간을 재서, 제출 데이터에 함께 실어 보냅니다.
+   (담당자·대리점을 고르는 중간 클릭으로는 다시 초기화되지 않습니다) */
+let formStartTs=null, formTimerHandle=null;
+function startFormTimer(){
+  formStartTs = Date.now();
+  stopFormTimer();
+  formTimerHandle = setInterval(updateFormTimerUI, 1000);
+  updateFormTimerUI();
+}
+function stopFormTimer(){
+  if(formTimerHandle){ clearInterval(formTimerHandle); formTimerHandle=null; }
+}
+/* 새 보고를 시작할 때(newReport) 호출 — 이전 보고의 타이머 값이 남아있지
+   않도록 완전히 초기화합니다. "보고 항목" 단계에 다시 들어오면 그때부터
+   새로 측정이 시작됩니다. */
+function resetFormTimer(){
+  stopFormTimer();
+  formStartTs = null;
+}
+function fmtDuration(sec){
+  sec = Math.max(0, Math.round(Number(sec)||0));
+  const m = Math.floor(sec/60), s = sec%60;
+  return m>0 ? `${m}분 ${s}초` : `${s}초`;
+}
+function updateFormTimerUI(){
+  const el = document.getElementById('formTimer');
+  if(!el || !formStartTs) return;
+  el.textContent = '⏱️ ' + fmtDuration((Date.now()-formStartTs)/1000);
+}
+
+/* ===== ✏️ 보고 수정 기한 (작성일 + N일) =====
+   Code.gs의 EDIT_WINDOW_DAYS와 반드시 같은 값으로 유지하세요. */
+const EDIT_WINDOW_DAYS = 3;
+function editDeadline(ts){
+  return new Date(new Date(ts).getTime() + EDIT_WINDOW_DAYS*24*60*60*1000);
+}
+function canEditReport(r){
+  return Date.now() <= editDeadline(r.ts).getTime();
+}
+
+function resetForm(){
+  return {
+    agencies:[],          // 선택 대리점 code 배열
+    target:'lead',        // 'lead' | 'leaddept'
+    visitTypes:[],productLines:[],followUps:[],   // 방문유형/논의상품군/후속조치 (보고 항목 단계, 공통)
+    sections:{promo:false,inc:false,note:false,etc:false},
+    promo:{name:'',channel:[],count:0,reach:0,bookings:0,amount:0,result:'중',memo:''},
+    inc:{signed:[],unsigned:[],signedAmt:0,signedCount:0,signNote:'',unsignNote:''},
+    note:{text:'',urgency:'보통'},
+    etc:{text:''}
+  };
+}
+/* 담당자(팀원)나 대리점을 바꿀 때, 이전에 입력하던 "보고 항목" 내용(방문유형·
+   논의상품군·후속조치·프로모션/인센티브/특이사항/기타, 보고 대상)만 새로
+   초기화합니다. agencies 배열 자체는 호출한 쪽(pickMe/toggleAg)에서 따로
+   관리하므로 여기서는 건드리지 않습니다. */
+function resetReportContent(){
+  const fresh = resetForm();
+  rptForm.target = fresh.target;
+  rptForm.visitTypes = fresh.visitTypes;
+  rptForm.productLines = fresh.productLines;
+  rptForm.followUps = fresh.followUps;
+  rptForm.sections = fresh.sections;
+  rptForm.promo = fresh.promo;
+  rptForm.inc = fresh.inc;
+  rptForm.note = fresh.note;
+  rptForm.etc = fresh.etc;
+}
+/* 현재 보고 항목 내용이 "어느 대리점 것"인지 기억해뒀다가, 실제로 다른
+   대리점으로 바뀔 때만 내용을 초기화합니다 (같은 대리점을 실수로 두 번
+   눌러도 입력 중이던 내용이 사라지지 않도록). */
+let lastContentAgency = null;
+
+/* "내가 작성한 보고" 목록 기간 필터 — 기본값 '이번 주'만 보이고,
+   이전 내역은 기간을 선택해서 볼 수 있습니다 (팀장/부서장 대시보드와
+   동일한 period-toggle 컴포넌트를 'my' scope로 재사용합니다). */
+let myReportsPeriod='week';
+let myCustomStart='', myCustomEnd='';
+
+const STEPS=['부서 선택','팀 선택','담당자 · 대리점','보고 항목','내용 작성','검토 & 제출'];
+
+/* ===== 초기화 ===== */
+document.getElementById('todayLbl').textContent = fmtDate(new Date());
+renderSales();
+if(!apiReady()){
+  const warn=document.createElement('div');
+  warn.style.cssText='background:#fef3c7;color:#92400e;font-size:12px;font-weight:700;text-align:center;padding:9px 14px;border-bottom:1px solid #fcd34d';
+  warn.textContent='⚠️ 백엔드(API_URL)가 아직 연결되지 않았습니다 — 코드 상단의 API_URL 값을 배포한 웹앱 주소로 교체하세요.';
+  document.body.insertBefore(warn, document.body.firstChild);
+}
+
+function setRole(r){
+  role=r;
+  document.querySelectorAll('.role-tabs button').forEach(b=>b.classList.toggle('on',b.dataset.role===r));
+  document.getElementById('salesView').classList.toggle('hide',r!=='sales');
+  document.getElementById('leadView').classList.toggle('hide',r!=='lead');
+  document.getElementById('headView').classList.toggle('hide',r!=='head');
+  document.getElementById('navBar').classList.add('hide');
+  stopPolling();
+  if(r==='lead'){
+    renderLead();
+    if(leadAuthed) loadReports().then(()=>{ renderLead(); startPolling('lead'); });
+  }
+  if(r==='head'){
+    renderHead();
+    if(headAuthed) loadReports().then(()=>{ renderHead(); startPolling('head'); });
+  }
+  if(r==='sales') renderSales();
+}
+
+/* ============================================================
+   담당자 작성 (스텝 위저드)
+   ============================================================ */
+function renderSales(){
+  const host=document.getElementById('salesView');
+  const pct = Math.round((curStep)/(STEPS.length-1)*100);
+  let html = `<div class="prog"><div class="bar"><div class="fill" style="width:${pct}%"></div></div><div class="pct">${pct}%</div></div>`;
+  if(formStartTs){
+    html += `<div class="form-timer-wrap"><span id="formTimer" class="form-timer-badge" title="보고 항목 단계에 들어온 뒤 지난 시간입니다">⏱️ 0초</span></div>`;
+  }
+  html += breadcrumb();
+  html += `<div class="card">`;
+  html += `<div class="step-head"><div class="step-num">${curStep+1}</div><div><h2>${STEPS[curStep]}</h2><div class="d">${stepDesc(curStep)}</div></div></div>`;
+  if(editingId && curStep>=3){
+    html += `<div style="display:flex;align-items:center;justify-content:space-between;gap:8px;background:rgba(37,99,235,.08);border:1px solid rgba(37,99,235,.25);color:var(--acc2);font-size:12px;font-weight:700;padding:9px 13px;border-radius:10px;margin-bottom:14px">
+      <span>✏️ 기존에 작성한 보고를 수정하는 중입니다</span>
+      <button type="button" style="font-size:11px;font-weight:600;color:var(--sub);background:transparent;border:none" onclick="newReport()">수정 취소</button>
+    </div>`;
+  }
+  html += stepBody(curStep);
+  // 카드 내부 인라인 진행 버튼 (자동진행 단계 제외) — 하단 고정바가 안 보일 때도 항상 누를 수 있게
+  const inlineAuto = (curStep===0 || curStep===1);
+  if(!inlineAuto){
+    const okNow = canNext() && !submitting;
+    const lbl = submitting ? (editingId?'수정 중...':'전송 중...') : (curStep===STEPS.length-1 ? (editingId?'수정 완료 ✓':'제출하기 ✓') : '다음 →');
+    html += `<div class="inline-nav">
+      ${curStep>0?`<button class="btn btn-sec" ${submitting?'disabled':''} onclick="step(-1)">← 이전</button>`:''}
+      <button class="btn btn-pri ${okNow?'ready':''}" ${okNow?'':'disabled'} onclick="step(1)">${lbl}</button>
+    </div>`;
+  }
+  html += `</div>`;
+  host.innerHTML = html;
+  // 하단 고정 네비바는 사용하지 않음 (카드 내부 인라인 버튼으로 대체 — 모바일에서 안정적)
+  document.getElementById('navBar').classList.add('hide');
+  bindStep(curStep);
+  // ⏱️ 위에서 배지를 항상 "0초"로 새로 그리기 때문에, 매 렌더 직후 실제 경과
+  // 시간으로 즉시 갱신합니다 (1초 주기 타이머만 믿으면 칩을 누를 때마다
+  // 화면이 0초로 초기화된 것처럼 보이는 문제가 있었습니다 — formStartTs
+  // 자체는 안 바뀌지만 화면 표시만 늦게 따라잡던 것).
+  updateFormTimerUI();
+}
+
+function stepDesc(s){
+  return ['소속 부서를 선택하세요','부서 내 팀을 선택하세요','담당자 본인과 대리점 선택','보고 대상 + 보고할 항목 선택','각 항목 내용을 입력','보고 대상에게 실시간 전송'][s];
+}
+
+/* 상단 브레드크럼: 클릭하면 해당 단계로 이동 */
+function breadcrumb(){
+  const parts=[];
+  parts.push({label: myDept?('🏢 '+myDept):'🏢 부서', step:0, on:!!myDept});
+  if(myDept) parts.push({label: myTeam?('👥 '+myTeam):'👥 팀', step:1, on:!!myTeam});
+  if(myTeam) parts.push({label: me?('👤 '+me.name):'👤 담당자', step:2, on:!!me});
+  if(parts.length<=1 && !myDept) return ''; // 첫 화면엔 숨김
+  let h='<div class="bcrumb">';
+  parts.forEach((p,i)=>{
+    if(i>0) h+='<span class="bc-sep">›</span>';
+    const cls = p.on?'bc-link':'bc-link bc-empty';
+    h+=`<button class="${cls} ${curStep===p.step?'cur':''}" onclick="gotoStep(${p.step})">${p.label}</button>`;
+  });
+  h+='</div>';
+  return h;
+}
+function gotoStep(s){
+  if(s>curStep) return;          // 브레드크럼으로는 앞 단계로만 이동(되돌아가기)
+  curStep=s;
+  renderSales(); window.scrollTo(0,0);
+}
+
+function stepBody(s){
+  if(s===0) return bodyDept();
+  if(s===1) return bodyTeam();
+  if(s===2) return bodyMember();
+  if(s===3) return bodySections();
+  if(s===4) return bodyContent();
+  if(s===5) return bodyReview();
+}
+
+/* --- 부서 > 팀 구조 (담당자가 존재하는 팀만) --- */
+function deptTeamMap(){
+  const m={};
+  SALES.forEach(s=>{ if(!m[s.dept])m[s.dept]={}; m[s.dept][s.team]=true; });
+  return m;
+}
+/* 부서 표시 순서(지정 순서 우선, 나머지는 뒤에) */
+function sortDepts(arr){
+  return arr.slice().sort((a,b)=>{
+    let ia=DEPT_ORDER.indexOf(a), ib=DEPT_ORDER.indexOf(b);
+    if(ia<0) ia=DEPT_ORDER.length; if(ib<0) ib=DEPT_ORDER.length;
+    return ia-ib || a.localeCompare(b,'ko');
+  });
+}
+
+/* --- STEP1: 부서 선택 --- */
+function bodyDept(){
+  const dtm = deptTeamMap();
+  const depts = sortDepts(Object.keys(dtm));
+  let h = `<label>소속 부서 <span class="req">*</span> <span class="auto-hint">선택하면 자동으로 넘어갑니다</span></label><div class="big-pick">`;
+  depts.forEach(d=>{
+    const cnt = SALES.filter(s=>s.dept===d).length;
+    const teams = Object.keys(dtm[d]).length;
+    h += `<button class="big-chip ${myDept===d?'on':''}" onclick="pickDept('${d}')">
+      <span class="bc-ic">🏢</span><span class="bc-t">${d}</span>
+      <span class="bc-s">${teams}개 팀 · ${cnt}명</span></button>`;
+  });
+  h += `</div>`;
+  return h;
+}
+function pickDept(d){
+  myDept=d; myTeam=null; me=null; rptForm.agencies=[];
+  curStep=1;                 // 부서 고르면 바로 팀 선택 단계로
+  renderSales(); window.scrollTo(0,0);
+}
+
+/* --- STEP2: 팀 선택 --- */
+function bodyTeam(){
+  if(!myDept) return `<div class="empty"><div class="ic">🏢</div><p>먼저 부서를 선택하세요</p></div>`;
+  const dtm = deptTeamMap();
+  const teams = Object.keys(dtm[myDept]||{}).sort((a,b)=>a.localeCompare(b,'ko',{numeric:true}));
+  let h = `<label>팀 선택 <span class="req">*</span> <span class="auto-hint">선택하면 자동으로 넘어갑니다</span></label><div class="big-pick">`;
+  teams.forEach(t=>{
+    const cnt = SALES.filter(s=>s.team===t).length;
+    const lead = TL[t];
+    h += `<button class="big-chip ${myTeam===t?'on':''}" onclick="pickTeam('${t}')">
+      <span class="bc-ic">👥</span><span class="bc-t">${t}</span>
+      <span class="bc-s">${cnt}명${lead?' · 팀장 '+lead:' · 팀장 미지정'}</span></button>`;
+  });
+  h += `</div>`;
+  return h;
+}
+function pickTeam(team){
+  myTeam=team; me=null; rptForm.agencies=[];
+  curStep=2;                 // 팀 고르면 바로 담당자 선택 단계로
+  renderSales(); window.scrollTo(0,0);
+}
+
+/* --- STEP3: 담당자 + 대리점 --- */
+function bodyMember(){
+  if(!myTeam) return `<div class="empty"><div class="ic">👥</div><p>먼저 팀을 선택하세요</p></div>`;
+  const members = SALES.filter(s=>s.team===myTeam).sort((a,b)=>a.name.localeCompare(b.name,'ko'));
+  let h = `<label>담당자 선택 <span class="req">*</span> <span style="color:var(--mut);font-weight:400">(${members.length}명)</span></label>`;
+  h += `<div class="member-pick">`;
+  members.forEach(s=>{
+    h += `<button class="member-chip ${me&&me.name===s.name?'on':''}" onclick="pickMe('${s.name}')">
+      <span class="mc-av">${s.name.slice(0,1)}</span>${s.name}</button>`;
+  });
+  h += `</div>`;
+
+  if(me){
+    h += `<div style="background:var(--card2);border-radius:10px;padding:12px;margin-top:16px;font-size:13px;line-height:1.7">
+      <div>👤 <b>${me.name}</b> · ${me.team} · ${me.dept}</div>
+      <div style="color:var(--sub)">보고선: 팀장 <b style="color:var(--txt)">${me.teamLead||'(미지정)'}</b> → 부서장 <b style="color:var(--txt)">${me.deptHead||'(미지정)'}</b></div>
+    </div>`;
+    const mine = myAgencies();
+    const selName = rptForm.agencies.length ? (AG.find(a=>a.code===rptForm.agencies[0])||{}).name : '';
+    h += `<label>담당 대리점 <span class="req">*</span> <span style="color:var(--mut);font-weight:400">(내 담당 ${mine.length}곳 · 1곳 선택)</span></label>`;
+    if(mine.length){
+      h += `<input class="inp" id="agSearch" placeholder="🔍 대리점명 검색" oninput="filterAg(this.value)">`;
+      h += `<div class="ag-list" id="agList">${renderAgList(mine)}</div>`;
+      if(rptForm.agencies.length)
+        h += `<div class="next-hint">✅ <b>${selName}</b> 선택됨 — 아래 <b>다음</b> 버튼을 눌러 계속하세요</div>`;
+      else
+        h += `<div class="next-hint muted">위에서 대리점 1곳을 선택하세요</div>`;
+    } else {
+      h += `<div style="padding:14px;background:var(--card2);border-radius:10px;font-size:13px;color:var(--sub);line-height:1.6">
+        이 담당자에게 배정된 대리점이 없습니다.<br>대리점 없이도 보고를 진행할 수 있습니다. <b>다음</b>을 눌러 계속하세요.</div>`;
+    }
+    h += renderMyReports();
+  }
+  return h;
+}
+function renderAgList(list){
+  if(!list.length) return `<div style="padding:16px;text-align:center;color:var(--mut);font-size:13px">담당 대리점이 없습니다</div>`;
+  return list.map(a=>`<div class="ag-item ${rptForm.agencies.includes(a.code)?'on':''}" onclick="toggleAg('${a.code}')">
+    <div style="min-width:0"><div class="nm">${a.name}</div><div class="meta">${a.code} · ${a.type}</div></div>
+    <div class="gr">${a.grade}</div></div>`).join('');
+}
+function renderSelAg(){
+  if(!rptForm.agencies.length) return '';
+  return rptForm.agencies.map(c=>{const a=AG.find(x=>x.code===c);return `<span class="tag">${a.name}<button onclick="event.stopPropagation();toggleAg('${c}')">×</button></span>`}).join('');
+}
+function pickMe(name){
+  const found = SALES.find(s=>s.name===name && s.team===myTeam)||SALES.find(s=>s.name===name)||null;
+  me = (me && me.name===name) ? null : found;
+  rptForm.agencies=[];
+  resetReportContent();   // 담당자가 바뀌면 이전에 입력하던 보고 항목 내용을 초기화합니다
+  lastContentAgency=null;
+  myReportsPeriod='week'; myCustomStart=''; myCustomEnd=''; // 담당자를 바꾸면 "내가 작성한 보고"도 이번 주부터 다시 봅니다
+  renderSales();
+  if(me) loadReports().then(()=>{ if(me) renderSales(); });
+}
+/* 현재 담당자(me)가 작성한 보고 목록 (최신순) */
+function myReports(){
+  if(!me) return [];
+  return REPORTS.filter(r=>r.name===me.name && r.team===me.team);
+}
+function renderMyReports(){
+  if(!me) return '';
+  const all = myReports();
+  const mine = all.filter(r=>inPeriod(r.ts, myReportsPeriod, 'my'));
+  let h = `<label style="margin-top:20px;display:flex;align-items:center;justify-content:space-between">
+    <span>📋 내가 작성한 보고 <span style="color:var(--mut);font-weight:400">(${esc(periodLabel('my'))} · ${mine.length}건)</span></span>
+    <button type="button" style="font-size:11px;font-weight:600;color:var(--acc2);background:rgba(37,99,235,.08);border:none;padding:5px 10px;border-radius:99px" onclick="refreshMyReports()">🔄 새로고침</button>
+  </label>`;
+  h += periodToggle('my');
+  if(!all.length){
+    h += `<div style="padding:14px;background:var(--card2);border-radius:10px;font-size:13px;color:var(--sub)">아직 작성한 보고가 없습니다.</div>`;
+    return h;
+  }
+  if(!mine.length){
+    h += `<div style="padding:14px;background:var(--card2);border-radius:10px;font-size:13px;color:var(--sub)">${esc(periodLabel('my'))} 기간에는 작성한 보고가 없습니다. 위에서 기간을 바꿔보세요.</div>`;
+    return h;
+  }
+  h += `<div style="display:flex;flex-direction:column;gap:8px">`;
+  mine.forEach(r=>{
+    const deadline = editDeadline(r.ts);
+    const editable = canEditReport(r);
+    h += `<div style="background:var(--card2);border:1px solid var(--line);border-radius:10px;padding:12px">
+      <div style="display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap">
+        <div>
+          <div style="font-size:12px;color:var(--sub)">${fmtDate(new Date(r.ts))} ${fmtTime(new Date(r.ts))}${r.editedAt?' · <span style="color:var(--acc2)">✏️ 수정됨</span>':''}</div>
+          ${editable?`<div class="edit-deadline-note">수정 기한: ${fmtDate(deadline)} ${fmtTime(deadline)}까지</div>`:''}
+        </div>
+        ${editable
+          ? `<button type="button" style="font-size:12px;font-weight:700;color:#fff;background:var(--acc2);border:none;padding:6px 12px;border-radius:99px" onclick="startEditReport(${r.id})">✏️ 수정</button>`
+          : `<span class="edit-locked">🔒 수정기한 마감</span>`}
+      </div>
+      <div class="badges" style="margin-top:8px;margin-bottom:8px">
+        ${r.sections.promo?`<span class="bdg promo">📢 프로모션</span>`:''}
+        ${r.sections.inc?`<span class="bdg inc">🤝 인센티브</span>`:''}
+        ${r.sections.note?`<span class="bdg note">⚠️ 특이사항${r.note.urgency==='긴급'||r.note.urgency==='높음'?' '+r.note.urgency:''}</span>`:''}
+        ${r.sections.etc?`<span class="bdg etc">📝 기타</span>`:''}
+      </div>
+      ${r.agencies.length?`<div class="ag-pills">${r.agencies.map(n=>`<span>🏪 ${n}</span>`).join('')}</div>`:''}
+      ${((r.visitTypes||[]).length || (r.productLines||[]).length || (r.followUps||[]).length) ? `<div class="fi-section"><div class="fi-kv">
+        <span class="k">방문유형</span><span class="v">${(r.visitTypes||[]).join(', ')||'-'}</span>
+        <span class="k">논의상품군</span><span class="v">${(r.productLines||[]).join(', ')||'-'}</span>
+        <span class="k">후속조치</span><span class="v">${(r.followUps||[]).join(', ')||'-'}</span></div></div>` : ''}
+      ${r.sections.promo?(()=>{const p=r.promo;return `<div class="fi-section"><div class="st">📢 프로모션 성과</div>
+        <div class="fi-kv"><span class="k">프로모션</span><span class="v">${esc(p.name)||'-'}</span>
+        <span class="k">채널/횟수</span><span class="v">${chLbl(p.channel)} · ${p.count}회</span>
+        <span class="k">도달/예약</span><span class="v">${p.reach}명 · ${p.bookings}건</span>
+        <span class="k">금액/평가</span><span class="v">${p.amount}만원 · ${p.result}</span></div>
+        ${p.memo?`<div class="fi-body" style="margin-top:6px">${esc(p.memo)}</div>`:''}</div>`;})():''}
+      ${r.sections.inc?(()=>{const c=r.inc;return `<div class="fi-section"><div class="st">🤝 인센티브 성과</div>
+        <div class="fi-kv"><span class="k" style="color:var(--ok)">✅ 체결 금액</span><span class="v">${c.signedAmt}만원</span>
+        <span class="k" style="color:var(--ok)">✅ 체결 인원</span><span class="v">${c.signedCount||0}명</span></div>
+        ${c.signNote?`<div class="fi-body" style="margin-top:6px">· 체결: ${esc(c.signNote)}</div>`:''}
+        ${c.unsignNote?`<div class="fi-body">· 미체결: ${esc(c.unsignNote)}</div>`:''}</div>`;})():''}
+      ${r.sections.note?(()=>{const col=r.note.urgency==='긴급'?'var(--bad)':r.note.urgency==='높음'?'var(--warn)':'var(--acc)';return `<div class="fi-section"><div class="st" style="color:${col}">⚠️ 대리점 특이사항 · ${r.note.urgency}</div>
+        <div class="fi-body">${esc(r.note.text)}</div></div>`;})():''}
+      ${r.sections.etc?`<div class="fi-section"><div class="st">📝 기타 보고</div><div class="fi-body">${esc(r.etc.text)}</div></div>`:''}
+    </div>`;
+  });
+  h += `</div>`;
+  return h;
+}
+async function refreshMyReports(){
+  await loadReports();
+  renderSales();
+  toast('🔄 새로고침 완료');
+}
+/* 기존에 작성한 보고를 불러와 수정 모드로 전환 */
+function startEditReport(id){
+  const r = REPORTS.find(x=>x.id===id);
+  if(!r){ toast('해당 보고를 찾을 수 없습니다'); return; }
+  if(!canEditReport(r)){ toast(`⚠️ 수정 기한(작성 후 ${EDIT_WINDOW_DAYS}일)이 지나 더 이상 수정할 수 없습니다`); return; }
+  editingId = r.id;
+  startFormTimer();
+  rptForm = {
+    agencies: (r.agencies||[]).map(n=>{const a=myAgencies().find(x=>x.name===n)||AG.find(x=>x.name===n);return a?a.code:null;}).filter(Boolean),
+    target: r.target||'lead',
+    visitTypes:[...(r.visitTypes||[])], productLines:[...(r.productLines||[])], followUps:[...(r.followUps||[])],
+    sections: {...r.sections},
+    promo: {...resetForm().promo, ...r.promo, channel: Array.isArray(r.promo && r.promo.channel) ? [...r.promo.channel] : (r.promo && r.promo.channel ? [r.promo.channel] : [])},
+    inc: {...resetForm().inc, ...r.inc},
+    note: {...resetForm().note, ...r.note},
+    etc: {...resetForm().etc, ...r.etc},
+  };
+  lastContentAgency = rptForm.agencies[0] || null; // 이미 불러온 대리점을 다시 눌러도 수정 내용이 지워지지 않도록
+  curStep = 3;
+  renderSales(); window.scrollTo(0,0);
+  toast('✏️ 수정 모드로 전환됐습니다');
+}
+function filterAg(q){
+  const mine = myAgencies().filter(a=>a.name.includes(q)||a.code.includes(q));
+  document.getElementById('agList').innerHTML = renderAgList(mine);
+}
+function toggleAg(code){
+  // 단일 선택: 같은 항목 다시 누르면 해제, 아니면 교체
+  const wasSelected = rptForm.agencies.includes(code);
+  rptForm.agencies = wasSelected ? [] : [code];
+  if(!wasSelected){
+    // 새로 대리점을 선택함 — 직전에 내용을 입력하던 대리점과 다르면
+    // (다른 대리점으로 전환한 것이므로) 보고 항목 내용을 초기화합니다.
+    // 같은 대리점을 두 번 눌러 다시 선택한 경우는 내용을 그대로 둡니다.
+    if(lastContentAgency && lastContentAgency!==code) resetReportContent();
+    lastContentAgency = code;
+  }
+  renderSales();
+}
+
+function setTarget(t){
+  rptForm.target=t;
+  renderSales();
+}
+
+/* --- STEP4: 보고 대상 + 보고 항목 --- */
+function bodySections(){
+  const tl=me&&me.teamLead?(me.teamLead+' 팀장'):'팀장';
+  const dh=me&&me.deptHead?(me.deptHead+' 부서장'):'부서장';
+  // (1) 보고 대상
+  let h = `<label>보고 대상 <span class="req">*</span></label>
+  <div class="rpt-targets">
+    <div class="rpt-opt ${rptForm.target==='lead'?'on':''}" onclick="setTarget('lead')">
+      <div class="ic">👔</div><div class="t">팀장 보고</div>
+      <div class="s">${tl} 에게만</div>
+    </div>
+    <div class="rpt-opt ${rptForm.target==='leaddept'?'on':''}" onclick="setTarget('leaddept')">
+      <div class="ic">👔🏢</div><div class="t">팀장 + 부서장</div>
+      <div class="s">${tl} · ${dh}</div>
+    </div>
+  </div>`;
+  // (1.5) 방문유형 / 논의상품군 / 후속조치 (공통 항목)
+  h += `<label style="margin-top:20px">방문유형 <span style="color:var(--mut);font-weight:400">(중복 선택 가능)</span></label>
+  <div class="chips">${multiChips(['정기 방문','인센티브 견적 처리','이슈 대응','마케팅 논의','상품 홍보','경쟁사 동향'],rptForm.visitTypes,'visitTypes')}</div>
+  <label>논의상품군 <span style="color:var(--mut);font-weight:400">(중복 선택 가능)</span></label>
+  <div class="chips">${multiChips(['동남아1','동남아2','일본','중국','유럽','미주/남태','국내','테마','인바운드'],rptForm.productLines,'productLines')}</div>
+  <label>후속조치 <span style="color:var(--mut);font-weight:400">(중복 선택 가능)</span></label>
+  <div class="chips">${multiChips(['없음','온라인견적서 회신','상품 자료 제공','프로모션 자료 제공','POSM 전달','인센티브 입금가 및 조건 협의','클레임 처리','행사 계약 및 서류 작업'],rptForm.followUps,'followUps')}</div>`;
+  // (2) 보고 항목
+  const items=[
+    ['promo','📢','프로모션 성과 보고'],
+    ['inc','🤝','인센티브 체결/미체결 성과'],
+    ['note','⚠️','대리점 특이사항 보고'],
+    ['etc','📝','기타 보고'],
+  ];
+  h += `<label style="margin-top:20px">보고 항목 <span class="req">*</span> <span style="color:var(--mut);font-weight:400">(복수 선택 가능)</span></label>`;
+  h += items.map(([k,ic,t])=>`<div class="sec-toggle ${rptForm.sections[k]?'on':''}" onclick="toggleSec('${k}')">
+      <div class="lbl"><span class="ic">${ic}</span>${t}</div><div class="sw"></div></div>`).join('');
+  return h;
+}
+function toggleSec(k){rptForm.sections[k]=!rptForm.sections[k];renderSales();}
+
+/* --- STEP4: 내용 작성 --- */
+function bodyContent(){
+  let h='';
+  const any = Object.values(rptForm.sections).some(v=>v);
+  if(!any) return `<div class="empty"><div class="ic">📋</div><p>이전 단계에서<br>보고 항목을 먼저 선택하세요</p></div>`;
+
+  if(rptForm.sections.promo){
+    h+=secWrap('📢 프로모션 성과',`
+      <label>프로모션명 <span style="color:var(--mut);font-weight:400">(선택)</span></label>
+      <input class="inp" placeholder="예: 여름 성수기 프로모션" value="${esc(rptForm.promo.name)}" oninput="rptForm.promo.name=this.value">
+      <label>홍보 채널 <span class="req">*</span> <span style="color:var(--mut);font-weight:400">(중복 선택 가능)</span></label>
+      <div class="chips" id="chPromoCh">${multiChips(['카카오톡','문자','SNS','이메일','오프라인'],rptForm.promo.channel,'promo.channel')}</div>
+      <div class="grid2" style="margin-top:14px">
+        ${stepper('홍보 횟수','promo.count')}
+        ${stepper('도달 고객수','promo.reach')}
+        ${stepper('예약 전환(건)','promo.bookings')}
+        ${stepper('예약 금액(만원)','promo.amount')}
+      </div>
+      <label>성과 평가 <span class="req">*</span></label>
+      <div class="chips">${chips(['상','중','하'],rptForm.promo.result,'promoRes')}</div>
+      <label>메모 (선택)</label>
+      <textarea oninput="rptForm.promo.memo=this.value" placeholder="특이사항·개선점">${esc(rptForm.promo.memo)}</textarea>
+    `);
+  }
+  if(rptForm.sections.inc){
+    h+=secWrap('🤝 인센티브 성과',`
+      <label style="color:var(--ok)">✅ 체결 성과</label>
+      <div class="grid2">
+        ${stepper('체결 금액(만원)','inc.signedAmt')}
+        ${stepper('체결 인원(명)','inc.signedCount')}
+      </div>
+      <label>체결 내용 (선택)</label>
+      <textarea oninput="rptForm.inc.signNote=this.value" placeholder="조건·기간 등">${esc(rptForm.inc.signNote)}</textarea>
+      <label style="color:var(--warn);margin-top:18px">⏳ 미체결 성과</label>
+      <label>미체결 사유/진행상황 (선택)</label>
+      <textarea oninput="rptForm.inc.unsignNote=this.value" placeholder="보류 사유·다음 액션">${esc(rptForm.inc.unsignNote)}</textarea>
+    `);
+  }
+  if(rptForm.sections.note){
+    h+=secWrap('⚠️ 대리점 특이사항',`
+      <label>긴급도</label>
+      <div class="chips">${chips(['낮음','보통','높음','긴급'],rptForm.note.urgency,'noteUrg')}</div>
+      <label>특이사항 내용 <span class="req">*</span></label>
+      <textarea oninput="rptForm.note.text=this.value" placeholder="클레임, 거래 변동, 경쟁사 동향, 폐업/이전 등">${esc(rptForm.note.text)}</textarea>
+    `);
+  }
+  if(rptForm.sections.etc){
+    h+=secWrap('📝 기타 보고',`
+      <label>내용</label>
+      <textarea oninput="rptForm.etc.text=this.value" placeholder="자유 기재">${esc(rptForm.etc.text)}</textarea>
+    `);
+  }
+  return h;
+}
+function secWrap(title,inner){
+  return `<div style="border:1px solid var(--line);border-radius:12px;padding:14px;margin-bottom:14px;background:var(--card2)">
+    <div style="font-weight:700;font-size:14px;margin-bottom:6px">${title}</div>${inner}</div>`;
+}
+function chips(arr,sel,group){
+  return arr.map(v=>`<div class="chip ${sel===v?'on':''}" onclick="pickChip('${group}','${v}')">${v}</div>`).join('');
+}
+function pickChip(group,v){
+  if(group==='promoRes') rptForm.promo.result = v;
+  if(group==='noteUrg') rptForm.note.urgency = v;
+  renderSales();
+}
+/* 중복 선택형 칩 (방문유형/논의상품군/후속조치 등) */
+function multiChips(arr,selArr,path){
+  return arr.map(v=>`<div class="chip ${(selArr||[]).includes(v)?'on':''}" onclick="toggleMulti('${path}','${v.replace(/'/g,"\\'")}')">${v}</div>`).join('');
+}
+function toggleMulti(path,v){
+  const arr = getPath(path);
+  const i = arr.indexOf(v);
+  if(i>=0) arr.splice(i,1); else arr.push(v);
+  renderSales();
+}
+function stepper(label,path){
+  const val = getPath(path);
+  return `<div><label style="margin-top:0">${label}</label>
+    <div class="stp">
+      <button onclick="bump('${path}',-1)">−</button>
+      <input type="number" value="${val}" oninput="setPath('${path}',+this.value||0)">
+      <button onclick="bump('${path}',1)">+</button>
+    </div></div>`;
+}
+function incAgPicker(kind,list){
+  const arr = rptForm.inc[kind];
+  return `<div class="ag-pills" style="margin:6px 0 4px">
+    ${list.map(a=>`<span style="cursor:pointer;${arr.includes(a.code)?'background:var(--acc2);color:#fff':''}" onclick="toggleInc('${kind}','${a.code}')">${a.name}</span>`).join('')||'<span style="color:var(--mut)">담당 대리점 없음</span>'}
+  </div>`;
+}
+function toggleInc(kind,code){
+  const arr=rptForm.inc[kind];const i=arr.indexOf(code);
+  if(i>=0)arr.splice(i,1);else arr.push(code);
+  renderSales();
+}
+function bump(path,d){setPath(path,Math.max(0,getPath(path)+d));renderSales();}
+function getPath(p){return p.split('.').reduce((o,k)=>o[k],rptForm);}
+function setPath(p,v){const ks=p.split('.');let o=rptForm;for(let i=0;i<ks.length-1;i++)o=o[ks[i]];o[ks[ks.length-1]]=v;}
+
+/* --- STEP5: 검토 --- */
+function bodyReview(){
+  const tl=me.teamLead?(me.teamLead+' 팀장'):'팀장', dh=me.deptHead?(me.deptHead+' 부서장'):'부서장';
+  const recv = rptForm.target==='lead' ? [tl] : [tl, dh];
+  let h=`<div style="text-align:center;margin-bottom:14px">
+    <div style="font-size:13px;color:var(--sub)">전송 대상</div>
+    ${recv.map(r=>`<span class="recv-pill">📩 ${r}</span>`).join('')}
+  </div>`;
+  // 기본정보
+  const agNames = rptForm.agencies.map(c=>AG.find(a=>a.code===c)?.name).filter(Boolean);
+  h+=`<div class="review-block"><div class="rh">👤 담당자</div>
+    <div class="review-row"><span class="k">이름</span><span class="v">${me.name} · ${me.team}</span></div>
+    <div class="review-row"><span class="k">대상 대리점</span><span class="v">${agNames.join(', ')||'-'}</span></div>
+    <div class="review-row"><span class="k">방문유형</span><span class="v">${rptForm.visitTypes.join(', ')||'-'}</span></div>
+    <div class="review-row"><span class="k">논의상품군</span><span class="v">${rptForm.productLines.join(', ')||'-'}</span></div>
+    <div class="review-row"><span class="k">후속조치</span><span class="v">${rptForm.followUps.join(', ')||'-'}</span></div></div>`;
+  if(rptForm.sections.promo){const p=rptForm.promo;
+    h+=`<div class="review-block"><div class="rh">📢 프로모션 성과</div>
+      <div class="review-row"><span class="k">프로모션</span><span class="v">${esc(p.name)||'-'}</span></div>
+      <div class="review-row"><span class="k">채널·횟수</span><span class="v">${chLbl(p.channel)} / ${p.count}회</span></div>
+      <div class="review-row"><span class="k">도달·예약</span><span class="v">${p.reach}명 / ${p.bookings}건</span></div>
+      <div class="review-row"><span class="k">금액·평가</span><span class="v">${p.amount}만원 / ${p.result}</span></div>
+      ${p.memo?`<div class="review-txt" style="margin-top:6px">${esc(p.memo)}</div>`:''}</div>`;
+  }
+  if(rptForm.sections.inc){const c=rptForm.inc;
+    h+=`<div class="review-block"><div class="rh">🤝 인센티브 성과</div>
+      <div class="review-row"><span class="k">✅ 체결 금액</span><span class="v">${c.signedAmt}만원</span></div>
+      <div class="review-row"><span class="k">✅ 체결 인원</span><span class="v">${c.signedCount||0}명</span></div>
+      ${c.signNote?`<div class="review-txt">${esc(c.signNote)}</div>`:''}
+      ${c.unsignNote?`<div class="review-row"><span class="k">⏳ 미체결</span><span class="v"></span></div><div class="review-txt">${esc(c.unsignNote)}</div>`:''}</div>`;
+  }
+  if(rptForm.sections.note){
+    h+=`<div class="review-block"><div class="rh">⚠️ 대리점 특이사항 · ${rptForm.note.urgency}</div>
+      <div class="review-txt">${esc(rptForm.note.text)||'-'}</div></div>`;
+  }
+  if(rptForm.sections.etc){
+    h+=`<div class="review-block"><div class="rh">📝 기타 보고</div>
+      <div class="review-txt">${esc(rptForm.etc.text)||'-'}</div></div>`;
+  }
+  return h;
+}
+
+/* --- 스텝 이동 / 검증 --- */
+function canNext(){
+  if(curStep===0) return !!myDept;                       // 부서
+  if(curStep===1) return !!myTeam;                       // 팀
+  if(curStep===2){                                       // 담당자+대리점
+    if(!me) return false;
+    return myAgencies().length===0 || rptForm.agencies.length>0; // 배정 대리점 없으면 통과
+  }
+  if(curStep===3) return Object.values(rptForm.sections).some(v=>v); // 보고 항목
+  if(curStep===4){                                       // 내용 작성
+    if(rptForm.sections.promo && rptForm.promo.channel.length===0) return false; // 프로모션명은 선택 입력, 홍보 채널만 필수
+    if(rptForm.sections.note && !rptForm.note.text.trim()) return false;
+    return true;
+  }
+  return true;
+}
+function step(d){
+  if(submitting) return;
+  if(d>0 && !canNext()){toast('필수 항목을 입력하세요');return;}
+  if(curStep===STEPS.length-1 && d>0){submitReport();return;}
+  curStep=Math.min(STEPS.length-1,Math.max(0,curStep+d));
+  // ⏱️ "보고 항목"(4번째) 단계에 처음 들어오는 순간부터 제출할 때까지 시간을 잽니다.
+  // 이미 재고 있는 중이면(뒤로 갔다 다시 들어와도) 다시 시작하지 않습니다.
+  if(curStep===3 && !formStartTs) startFormTimer();
+  renderSales();window.scrollTo(0,0);
+}
+function bindStep(){/* placeholder for focus etc. */}
+
+/* --- 제출 --- */
+let submitting=false;
+async function submitReport(){
+  if(submitting) return;
+  if(!apiReady()){ toast('⚠️ 백엔드(API_URL)가 설정되지 않아 제출할 수 없습니다'); return; }
+  // 선택한 대리점의 분석용 메타데이터(등급/인증구분)도 함께 전송 — 상권분석 등 통계 목적
+  const agObjs = rptForm.agencies.map(c=>AG.find(a=>a.code===c)).filter(Boolean);
+  const ag0 = agObjs[0]||null;
+  const rec={
+    name:me.name, team:me.team, dept:me.dept,
+    teamLead:me.teamLead, deptHead:me.deptHead,
+    target:rptForm.target,
+    agencies:agObjs.map(a=>a.name),
+    agencyCode: ag0?ag0.code:'', agencyGrade: ag0?ag0.grade:'', agencyType: ag0?ag0.type:'',
+    visitTypes:[...rptForm.visitTypes], productLines:[...rptForm.productLines], followUps:[...rptForm.followUps],
+    sections:JSON.parse(JSON.stringify(rptForm.sections)),
+    promo:{...rptForm.promo}, inc:JSON.parse(JSON.stringify(rptForm.inc)),
+    note:{...rptForm.note}, etc:{...rptForm.etc},
+    durationSec: formStartTs ? Math.round((Date.now()-formStartTs)/1000) : null, // ⏱️ 작성 소요시간(업무 효율성 분석용)
+  };
+  const isEdit = !!editingId;
+  submitting=true; renderSales();
+  try{
+    const payload = isEdit ? Object.assign({action:'update', id:editingId}, rec) : Object.assign({action:'submit'}, rec);
+    const res = await apiPost(payload);
+    if(!res.ok) throw new Error(res.msg||'제출 실패');
+    submitting=false;
+    editingId=null;
+    stopFormTimer();
+    // 완료 화면
+    const tlR=me.teamLead?(me.teamLead+' 팀장'):'팀장', dhR=me.deptHead?(me.deptHead+' 부서장'):'부서장';
+    const recv = rptForm.target==='lead'?[tlR]:[tlR,dhR];
+    const durLbl = rec.durationSec!=null ? fmtDuration(rec.durationSec) : null;
+    document.getElementById('salesView').innerHTML = `<div class="card"><div class="done">
+      <div class="big">✅</div><h2>${isEdit?'보고가 수정됐습니다!':'보고가 전송됐습니다!'}</h2>
+      <p>${recv.join(' · ')} 에게 전달되었습니다.</p>
+      ${durLbl?`<p style="margin-top:6px;font-size:12px;color:var(--sub)">⏱️ 작성 소요시간: <b style="color:var(--acc2)">${durLbl}</b></p>`:''}
+      <div style="margin-top:16px">${recv.map(r=>`<span class="recv-pill">📩 ${r} <span class="live-dot"></span></span>`).join('')}</div>
+      <div style="margin-top:24px">
+        <button class="btn btn-pri" style="max-width:240px;margin:0 auto" onclick="newReport()">↩ 새 보고 작성</button>
+      </div>
+    </div></div>`;
+    document.getElementById('navBar').classList.add('hide');
+    toast((isEdit?'수정 완료 ✓':'전송 완료 ✓') + (durLbl?` (${durLbl} 소요)`:''));
+    loadReports();
+  }catch(err){
+    console.error(err);
+    submitting=false;
+    toast('⚠️ ' + (err && err.message ? err.message : (isEdit?'수정 실패 — 다시 시도해주세요':'전송 실패 — 다시 시도해주세요')));
+    renderSales();
+  }
+}
+function newReport(){
+  curStep=0; myDept=null; myTeam=null; me=null; rptForm=resetForm(); editingId=null;
+  lastContentAgency=null;
+  resetFormTimer(); // ⏱️ "보고 항목" 단계에 다시 들어올 때부터 새로 측정합니다
+  renderSales();
+}
+
+/* ============================================================
+   팀장 대시보드 (로그인 후 본인 것만)
+   ============================================================ */
+let leadWho=null, leadFilter='all', leadAuthed=false, leadPinInput='', leadPeriod='day';
+let leadCustomStart='', leadCustomEnd='';
+let leadMemberFilter=null;
+function renderLead(){
+  const host=document.getElementById('leadView');
+  if(!leadAuthed){ host.innerHTML=loginGate('lead'); return; }
+  const myTeams=Object.keys(TL).filter(t=>TL[t]===leadWho);
+  // 내 팀에 온 보고 (기간 필터 전체 후 카드용은 별도)
+  const mineAll = REPORTS.filter(r=>r.teamLead===leadWho);
+  const periodReps = mineAll.filter(r=>inPeriod(r.ts,leadPeriod,'lead'));
+  let reps = periodReps;
+  if(leadFilter!=='all') reps=reps.filter(r=>r.sections[leadFilter]);
+  if(leadMemberFilter) reps=reps.filter(r=>r.name===leadMemberFilter);
+  // 팀원 명단 (내 팀 소속 세일즈)
+  const members = SALES.filter(s=>myTeams.includes(s.team));
+
+  let h=`<div class="dash-head"><div><h2>👔 팀장 대시보드</h2>
+    <div style="font-size:12px;color:var(--sub)">담당 팀: ${myTeams.join(', ')||'-'} · 팀원 ${members.length}명${syncLbl()}</div></div>
+    <div class="who-sel"><span class="logged">🔒 ${leadWho} 팀장</span>
+    <button class="logout-btn" onclick="manualRefresh('lead')">🔄</button>
+    <button class="logout-btn" onclick="logoutDash('lead')">로그아웃</button></div></div>`;
+  h+=periodToggle('lead');
+  h+=renderInsightCard('lead', periodReps.length);
+  h+=statRow(periodReps);
+  h+=memberStatus(members,periodReps,'lead',leadMemberFilter);
+  h+=`<div class="feed-title">📨 ${leadMemberFilter?`${esc(leadMemberFilter)}님의 `:''}${periodLabel('lead')} 보고 내역 (${reps.length}건)${leadMemberFilter?` <button class="mclear-btn" onclick="selectMember('lead','${esc(leadMemberFilter)}')">✕ 전체 팀원 보기</button>`:''}</div>`;
+  if(leadMemberFilter) h+=compactSummaryTable(periodReps.filter(r=>r.name===leadMemberFilter));
+  h+=`<div class="export-bar"><button type="button" class="xlsx-btn" ${reps.length?'':'disabled'} onclick="exportExcel('lead')">📥 엑셀 다운로드 (${reps.length}건)</button></div>`;
+  h+=filterBar('lead');
+  h+= reps.length? reps.map(r=>feedCard(r,'lead',leadFilter)).join('') : emptyState();
+  host.innerHTML=h;
+}
+
+/* ============================================================
+   부서장 대시보드 (로그인 후 본인 것만)
+   ============================================================ */
+let headWho=null, headFilter='all', headAuthed=false, headPinInput='', headPeriod='day';
+let headCustomStart='', headCustomEnd='';
+let headMemberFilter=null;
+function renderHead(){
+  const host=document.getElementById('headView');
+  if(!headAuthed){ host.innerHTML=loginGate('head'); return; }
+  const myDepts=Object.keys(DH).filter(d=>DH[d]===headWho);
+  // 부서장은 'leaddept' 로 전송된 것만 받음
+  const mineAll = REPORTS.filter(r=>r.deptHead===headWho && r.target==='leaddept');
+  const periodReps = mineAll.filter(r=>inPeriod(r.ts,headPeriod,'head'));
+  let reps = periodReps;
+  if(headFilter!=='all') reps=reps.filter(r=>r.sections[headFilter]);
+  if(headMemberFilter) reps=reps.filter(r=>r.name===headMemberFilter);
+  // 부서원 명단 (담당 부서 소속 세일즈 전체)
+  const members = SALES.filter(s=>myDepts.includes(s.dept));
+
+  let h=`<div class="dash-head"><div><h2>🏢 부서장 대시보드</h2>
+    <div style="font-size:12px;color:var(--sub)">담당 부서: ${myDepts.join(', ')||'-'} · 부서원 ${members.length}명 · 팀장+부서장 보고만${syncLbl()}</div></div>
+    <div class="who-sel"><span class="logged">🔒 ${headWho} 부서장</span>
+    <button class="logout-btn" onclick="manualRefresh('head')">🔄</button>
+    <button class="logout-btn" onclick="logoutDash('head')">로그아웃</button></div></div>`;
+  h+=periodToggle('head');
+  h+=renderInsightCard('head', periodReps.length);
+  h+=statRow(periodReps);
+  h+=memberStatus(members,periodReps,'head',headMemberFilter);
+  h+=headTeamSummary(headWho,headPeriod);
+  h+=`<div class="feed-title">📨 ${headMemberFilter?`${esc(headMemberFilter)}님의 `:''}${periodLabel('head')} 보고 내역 (${reps.length}건)${headMemberFilter?` <button class="mclear-btn" onclick="selectMember('head','${esc(headMemberFilter)}')">✕ 전체 부서원 보기</button>`:''}</div>`;
+  if(headMemberFilter) h+=compactSummaryTable(periodReps.filter(r=>r.name===headMemberFilter));
+  h+=`<div class="export-bar"><button type="button" class="xlsx-btn" ${reps.length?'':'disabled'} onclick="exportExcel('head')">📥 엑셀 다운로드 (${reps.length}건)</button></div>`;
+  h+=filterBar('head');
+  h+= reps.length? reps.map(r=>feedCard(r,'head',headFilter)).join('') : emptyState();
+  host.innerHTML=h;
+}
+
+/* ============================================================
+   🤖 AI 인사이트 (Gemini, 무료) — 팀장/부서장이 화면에서 고른 기간
+   (일간/주간/월간/연간/기간지정)의 데이터를 요약해서 인사이트를 받아보는
+   기능. 백엔드(Code.gs)가 그 기간에 해당하는 Reports만 모아 Gemini API를
+   호출하고, 그 결과 텍스트만 돌려줍니다.
+   ============================================================ */
+let leadInsight=null, leadInsightLoading=false, leadInsightErr=null;
+let headInsight=null, headInsightLoading=false, headInsightErr=null;
+
+/* 현재 선택된 기간(day/week/month/year/custom)을 서버로 보낼 ISO 범위로 변환.
+   inPeriod()와 동일한 기준 — from만 있고 to가 없으면 "그 시점부터 지금까지". */
+function periodRangeISO(scope){
+  const p = scope==='lead'?leadPeriod:headPeriod;
+  const now = new Date();
+  if(p==='custom'){
+    const s = scope==='lead'?leadCustomStart:headCustomStart;
+    const e = scope==='lead'?leadCustomEnd:headCustomEnd;
+    return {
+      from: s ? new Date(s+'T00:00:00').toISOString() : null,
+      to: e ? new Date(e+'T23:59:59').toISOString() : null
+    };
+  }
+  if(p==='year') return { from: new Date(now.getFullYear(),0,1).toISOString(), to: null };
+  if(p==='month') return { from: new Date(now.getFullYear(),now.getMonth(),1).toISOString(), to: null };
+  if(p==='week'){
+    const mon=new Date(now); const wd=(now.getDay()+6)%7;
+    mon.setDate(now.getDate()-wd); mon.setHours(0,0,0,0);
+    return { from: mon.toISOString(), to: null };
+  }
+  const t0=new Date(now); t0.setHours(0,0,0,0);
+  return { from: t0.toISOString(), to: null };
+}
+
+function renderInsightCard(scope, periodCount){
+  const insight = scope==='lead'?leadInsight:headInsight;
+  const loading = scope==='lead'?leadInsightLoading:headInsightLoading;
+  const err = scope==='lead'?leadInsightErr:headInsightErr;
+  const pLabel = periodLabel(scope);
+  let h = `<div class="card" style="padding:16px;margin-bottom:14px;border:1px solid rgba(139,92,246,.25);background:linear-gradient(135deg,rgba(139,92,246,.06),rgba(59,130,246,.04))">
+    <div style="display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap">
+      <div style="font-weight:700;font-size:14px;display:flex;align-items:center;gap:6px">🤖 AI 인사이트 <span style="color:var(--mut);font-weight:400;font-size:12px">(${esc(pLabel)} · 보고 ${periodCount}건 기준)</span></div>
+      <button type="button" class="btn btn-pri" style="width:auto;padding:8px 14px;font-size:12px" ${loading?'disabled':''} onclick="loadInsight('${scope}')">
+        ${loading?'⏳ 생성 중...':(insight?'🔄 다시 생성':'✨ 인사이트 생성')}
+      </button>
+    </div>`;
+  if(loading){
+    h += `<div style="margin-top:10px;font-size:12px;color:var(--sub)">AI가 ${esc(pLabel)} 데이터를 분석하고 있어요 — 몇 초 정도 걸릴 수 있습니다.</div>`;
+  } else if(err){
+    h += `<div style="margin-top:10px;font-size:13px;color:var(--bad,#ef4444);white-space:pre-wrap;line-height:1.6">⚠️ ${esc(err)}</div>`;
+  } else if(insight){
+    h += `<div style="margin-top:10px;font-size:13px;line-height:1.7;white-space:pre-wrap">${esc(insight)}</div>`;
+  } else {
+    h += `<div style="margin-top:10px;font-size:12px;color:var(--sub)">위에서 기간을 고르고 버튼을 누르면, 그 기간 동안 우리 팀/부서 보고 데이터를 AI가 분석해서 트렌드·주의할 점·기회 요인을 요약해드려요.</div>`;
+  }
+  h += `</div>`;
+  return h;
+}
+
+async function loadInsight(scope){
+  if((scope==='lead'?leadInsightLoading:headInsightLoading)) return;
+  if(!apiReady()){ toast('⚠️ 백엔드(API_URL)가 설정되지 않았습니다'); return; }
+  const who = scope==='lead'?leadWho:headWho;
+  const range = periodRangeISO(scope);
+  const pLabel = periodLabel(scope);
+  if(scope==='lead'){ leadInsightLoading=true; leadInsightErr=null; } else { headInsightLoading=true; headInsightErr=null; }
+  (scope==='lead'?renderLead:renderHead)();
+  try{
+    const res = await apiPost({ action:'summarize', role:scope, who:who, from:range.from, to:range.to, periodLabel:pLabel });
+    if(scope==='lead') leadInsightLoading=false; else headInsightLoading=false;
+    if(!res.ok){
+      const msg = res.msg || '인사이트 생성에 실패했습니다.';
+      if(scope==='lead') leadInsightErr=msg; else headInsightErr=msg;
+    } else {
+      if(scope==='lead'){ leadInsight=res.summary; leadInsightErr=null; }
+      else { headInsight=res.summary; headInsightErr=null; }
+    }
+  }catch(err){
+    console.error(err);
+    if(scope==='lead'){ leadInsightLoading=false; leadInsightErr='네트워크 오류로 인사이트를 가져오지 못했습니다.'; }
+    else { headInsightLoading=false; headInsightErr='네트워크 오류로 인사이트를 가져오지 못했습니다.'; }
+  }
+  (scope==='lead'?renderLead:renderHead)();
+}
+
+/* --- 로그인 게이트 (본인 선택 + PIN) --- */
+/* 개인별 PIN은 더 이상 이 파일(공개 소스코드)에 두지 않습니다.
+   Google 시트의 "Auth" 탭(role/name/pin)에서 서버 쪽으로 관리합니다.
+   Auth 탭에 값이 없는 이름은 기본 PIN(0000)이 적용됩니다. */
+function loginGate(scope){
+  const isLead = scope==='lead';
+  const people = isLead
+    ? sortDepts([...new Set(Object.values(TL))].map(n=>n)) // 정렬은 이름 기준으로 아래서 재처리
+    : [...new Set(Object.values(DH))];
+  // 팀장: 부서>팀 순으로 정렬해 표시 / 부서장: 부서 순
+  let opts='';
+  if(isLead){
+    // 팀장 목록을 부서 순 → 팀 순으로
+    const entries=Object.keys(TL).map(team=>({team,dept:teamDept(team),name:TL[team]}))
+      .filter(e=>!EXCLUDE_DEPTS.includes(e.dept));
+    entries.sort((a,b)=>{
+      const da=DEPT_ORDER.indexOf(a.dept), db=DEPT_ORDER.indexOf(b.dept);
+      return (da<0?99:da)-(db<0?99:db) || a.team.localeCompare(b.team,'ko',{numeric:true});
+    });
+    const seen=new Set();
+    entries.forEach(e=>{ if(seen.has(e.name))return; seen.add(e.name);
+      opts+=`<option value="${e.name}">${e.name} 팀장 (${e.team})</option>`; });
+  } else {
+    const entries=Object.keys(DH).map(dept=>({dept,name:DH[dept]}))
+      .filter(e=>!EXCLUDE_DEPTS.includes(e.dept));
+    entries.sort((a,b)=>{const da=DEPT_ORDER.indexOf(a.dept),db=DEPT_ORDER.indexOf(b.dept);return (da<0?99:da)-(db<0?99:db);});
+    entries.forEach(e=>{ opts+=`<option value="${e.name}">${e.name} 부서장 (${e.dept})</option>`; });
+  }
+  const cur = isLead?leadWho:headWho;
+  const sel = `onchange="${isLead?'leadWho':'headWho'}=this.value"`;
+  return `<div class="card login-card">
+    <div class="login-ic">${isLead?'👔':'🏢'}</div>
+    <h2>${isLead?'팀장':'부서장'} 로그인</h2>
+    <p class="login-sub">본인 계정으로 로그인해야 보고를 볼 수 있습니다.<br>팀원·타 부서는 열람할 수 없습니다.</p>
+    <label>${isLead?'팀장':'부서장'} 선택</label>
+    <select id="${scope}LoginSel" ${sel}><option value="">${isLead?'팀장':'부서장'}을 선택하세요</option>${opts}</select>
+    <label>PIN 번호</label>
+    <input class="inp" type="password" inputmode="numeric" maxlength="4" placeholder="••••"
+      oninput="${isLead?'leadPinInput':'headPinInput'}=this.value">
+    <button id="${scope}LoginBtn" class="btn btn-pri" style="width:100%;margin-top:16px" onclick="loginDash('${scope}')">로그인</button>
+    <div class="login-note">🔑 테스트 계정 — 최정수 팀장 / 서민구 부서장 · PIN <b>1111</b><br>그 외 계정은 임시 PIN <b>0000</b> · PIN은 구글시트 "Auth" 탭에서 관리·변경할 수 있습니다.</div>
+  </div>`;
+}
+function teamDept(team){
+  // 팀이 속한 부서 찾기 (SALES 기반, 없으면 대리점기준)
+  const s=SALES.find(x=>x.team===team); if(s)return s.dept;
+  const a=AG.find(x=>x.team===team); return a?a.dept:'';
+}
+let loggingIn=false;
+async function loginDash(scope){
+  if(loggingIn) return;
+  const who = scope==='lead'?leadWho:headWho;
+  const pin = scope==='lead'?leadPinInput:headPinInput;
+  if(!who){toast(scope==='lead'?'팀장을 선택하세요':'부서장을 선택하세요');return;}
+  if(!pin){toast('PIN을 입력하세요');return;}
+  if(!apiReady()){toast('⚠️ 백엔드(API_URL)가 설정되지 않아 로그인할 수 없습니다');return;}
+  loggingIn=true;
+  const btn=document.getElementById(scope+'LoginBtn');
+  if(btn){ btn.disabled=true; btn.textContent='로그인 중...'; }
+  try{
+    // PIN 확인과 보고 목록 로딩을 동시에 진행 (직렬로 하면 대기 시간이 두 배가 됨)
+    const [res] = await Promise.all([
+      apiPost({action:'login', role:scope, name:who, pin}),
+      loadReports()
+    ]);
+    loggingIn=false;
+    if(!res.ok){
+      if(btn){ btn.disabled=false; btn.textContent='로그인'; }
+      toast(res.msg||'PIN이 올바르지 않습니다');
+      return;
+    }
+    if(scope==='lead'){ leadAuthed=true; leadPinInput=''; }
+    else { headAuthed=true; headPinInput=''; }
+    (scope==='lead'?renderLead:renderHead)();
+    startPolling(scope);
+  }catch(err){
+    loggingIn=false;
+    if(btn){ btn.disabled=false; btn.textContent='로그인'; }
+    console.error(err);
+    toast('⚠️ 로그인 확인 중 오류가 발생했습니다');
+  }
+}
+function logoutDash(scope){
+  stopPolling();
+  if(scope==='lead'){leadAuthed=false; leadWho=null; leadFilter='all'; leadMemberFilter=null; leadPeriod='day'; leadCustomStart=''; leadCustomEnd=''; leadInsight=null; leadInsightErr=null; renderLead();}
+  else {headAuthed=false; headWho=null; headFilter='all'; headMemberFilter=null; headPeriod='day'; headCustomStart=''; headCustomEnd=''; headInsight=null; headInsightErr=null; renderHead();}
+}
+function headTeamSummary(head,period){
+  const myDepts=Object.keys(DH).filter(d=>DH[d]===head);
+  const reps=REPORTS.filter(r=>myDepts.includes(r.dept) && r.target==='leaddept' && inPeriod(r.ts,period||'day','head'));
+  const byTeam={};
+  reps.forEach(r=>{byTeam[r.team]=(byTeam[r.team]||0)+1});
+  const teams=Object.keys(byTeam).sort((a,b)=>a.localeCompare(b,'ko',{numeric:true}));
+  if(!teams.length) return '';
+  return `<div class="card" style="padding:14px"><div style="font-size:12px;font-weight:700;color:var(--sub);margin-bottom:8px">팀별 보고 건수</div>
+    <div style="display:flex;flex-wrap:wrap;gap:8px">${teams.map(t=>`<span class="bdg tl">${t} <b style="color:var(--txt)">${byTeam[t]}</b></span>`).join('')}</div></div>`;
+}
+
+/* ===== 기간(일간/주간/월간/연간/기간지정) 유틸 ===== */
+/* 팀장('lead')·부서장('head')·담당자 본인 보고 이력('my') 공통으로 쓰는
+   기간 필터 상태를 scope 문자열로 조회/기록하는 헬퍼입니다. */
+function periodState(scope){
+  if(scope==='lead') return {get p(){return leadPeriod;}, set p(v){leadPeriod=v;}, get cs(){return leadCustomStart;}, set cs(v){leadCustomStart=v;}, get ce(){return leadCustomEnd;}, set ce(v){leadCustomEnd=v;}};
+  if(scope==='head') return {get p(){return headPeriod;}, set p(v){headPeriod=v;}, get cs(){return headCustomStart;}, set cs(v){headCustomStart=v;}, get ce(){return headCustomEnd;}, set ce(v){headCustomEnd=v;}};
+  return {get p(){return myReportsPeriod;}, set p(v){myReportsPeriod=v;}, get cs(){return myCustomStart;}, set cs(v){myCustomStart=v;}, get ce(){return myCustomEnd;}, set ce(v){myCustomEnd=v;}};
+}
+function inPeriod(ts,period,scope){
+  const d=new Date(ts), now=new Date();
+  if(period==='custom'){
+    // 기간 지정: 시작일/종료일 중 비워둔 쪽은 무제한으로 취급
+    const st = periodState(scope);
+    const s = st.cs, e = st.ce;
+    if(!s && !e) return true;
+    if(s){ const start=new Date(s+'T00:00:00'); if(d<start) return false; }
+    if(e){ const end=new Date(e+'T23:59:59'); if(d>end) return false; }
+    return true;
+  }
+  if(period==='year'){
+    // 올해 1월 1일 ~ 현재
+    const y0=new Date(now.getFullYear(),0,1);
+    return d>=y0;
+  }
+  if(period==='month'){
+    // 이번 달 1일 00:00 ~ 현재
+    const m0=new Date(now.getFullYear(),now.getMonth(),1);
+    return d>=m0;
+  }
+  if(period==='week'){
+    // 이번 주 (월요일 00:00 ~ 현재)
+    const mon=new Date(now); const wd=(now.getDay()+6)%7; // 월=0
+    mon.setDate(now.getDate()-wd); mon.setHours(0,0,0,0);
+    return d>=mon;
+  }
+  // 오늘 (당일 00:00 ~)
+  const t0=new Date(now); t0.setHours(0,0,0,0);
+  return d>=t0;
+}
+function periodLabel(scope){
+  const p = periodState(scope).p;
+  if(p==='day') return '오늘';
+  if(p==='week') return '이번 주';
+  if(p==='month') return '이번 달';
+  if(p==='year') return '올해';
+  if(p==='custom') return customRangeLabel(scope);
+  return '';
+}
+function customRangeLabel(scope){
+  const st = periodState(scope);
+  const cs = st.cs, ce = st.ce;
+  if(!cs && !ce) return '전체 기간';
+  return `${cs||'처음'} ~ ${ce||'현재'}`;
+}
+function periodToggle(scope){
+  const st = periodState(scope);
+  const p = st.p, cs = st.cs, ce = st.ce;
+  // 담당자 본인 이력('my')은 오늘 단위는 굳이 필요 없어 기본을 '이번 주'로 둡니다.
+  let h = `<div class="period-toggle">
+    ${scope==='my'?'':`<button class="${p==='day'?'on':''}" onclick="setPeriod('${scope}','day')">📅 일간 (오늘)</button>`}
+    <button class="${p==='week'?'on':''}" onclick="setPeriod('${scope}','week')">🗓️ 주간 (이번 주)</button>
+    <button class="${p==='month'?'on':''}" onclick="setPeriod('${scope}','month')">🗓️ 월간 (이번 달)</button>
+    <button class="${p==='year'?'on':''}" onclick="setPeriod('${scope}','year')">🗓️ 연간 (올해)</button>
+    <button class="${p==='custom'?'on':''}" onclick="setPeriod('${scope}','custom')">🔍 기간 지정</button>
+  </div>`;
+  if(p==='custom'){
+    h += `<div class="card" style="padding:12px;display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-bottom:12px">
+      <label style="font-size:12px;color:var(--sub)">시작일</label>
+      <input type="date" class="inp" style="width:auto" value="${cs}" onchange="setCustomRange('${scope}','start',this.value)">
+      <label style="font-size:12px;color:var(--sub)">종료일</label>
+      <input type="date" class="inp" style="width:auto" value="${ce}" onchange="setCustomRange('${scope}','end',this.value)">
+      <span style="font-size:11px;color:var(--mut)">${(cs||ce)?'':'시작일/종료일을 비워두면 전체 기간이 표시됩니다'}</span>
+    </div>`;
+  }
+  return h;
+}
+function clearInsight(scope){
+  // 기간이 바뀌면 이전 기간 기준으로 생성된 AI 인사이트는 더 이상 유효하지 않으므로 비움
+  // ('my' scope는 AI 인사이트가 없는 담당자 본인 이력이므로 해당 없음)
+  if(scope==='lead'){ leadInsight=null; leadInsightErr=null; }
+  else if(scope==='head'){ headInsight=null; headInsightErr=null; }
+}
+function rerenderForScope(scope){
+  if(scope==='lead') renderLead();
+  else if(scope==='head') renderHead();
+  else renderSales();
+}
+function setPeriod(scope,p){
+  periodState(scope).p = p;
+  clearInsight(scope);
+  rerenderForScope(scope);
+}
+function setCustomRange(scope,which,val){
+  const st = periodState(scope);
+  if(which==='start') st.cs = val; else st.ce = val;
+  clearInsight(scope);
+  rerenderForScope(scope);
+}
+
+/* ===== 팀원/부서원 실시간 보고 현황 매트릭스 ===== */
+function memberStatus(members,reps,scope,selectedName){
+  if(!members.length) return '';
+  // 멤버별 집계
+  const byName={};
+  members.forEach(m=>{byName[m.name]={name:m.name,team:m.team,count:0,promo:0,inc:0,note:0,etc:0,last:null};});
+  reps.forEach(r=>{
+    const e=byName[r.name]; if(!e) return;
+    e.count++;
+    if(r.sections.promo)e.promo++; if(r.sections.inc)e.inc++;
+    if(r.sections.note)e.note++; if(r.sections.etc)e.etc++;
+    if(!e.last||r.ts>e.last)e.last=r.ts;
+  });
+  const list=Object.values(byName);
+  const done=list.filter(e=>e.count>0).length;
+  const rate=Math.round(done/list.length*100);
+  // 보고한 사람 위로, 팀/이름 순
+  list.sort((a,b)=> (b.count>0)-(a.count>0) || a.team.localeCompare(b.team,'ko',{numeric:true}) || a.name.localeCompare(b.name,'ko'));
+
+  let h=`<div class="card mstat-card">
+    <div class="mstat-head">
+      <div class="mstat-title">🧑‍💼 ${scope==='lead'?'팀원':'부서원'} 실시간 보고 현황 <span style="font-weight:400;color:var(--mut);font-size:11px">(이름 클릭 시 그 사람 보고만 보기)</span></div>
+      <div class="mstat-rate"><b>${done}</b>/${list.length}명 보고 · <span class="${rate>=70?'r-good':rate>=40?'r-mid':'r-low'}">${rate}%</span></div>
+    </div>
+    <div class="mstat-bar"><div class="mstat-fill" style="width:${rate}%"></div></div>
+    <div class="mstat-list">`;
+  list.forEach(e=>{
+    const reported=e.count>0;
+    const sel = selectedName===e.name;
+    h+=`<div class="mrow ${reported?'on':'off'} ${sel?'sel':''}" onclick="selectMember('${scope}','${esc(e.name)}')" role="button" tabindex="0">
+      <div class="mrow-l">
+        <span class="mdot ${reported?'g':''}"></span>
+        <span class="mname">${esc(e.name)}</span>
+        <span class="mteam">${esc(e.team)}</span>
+      </div>
+      <div class="mrow-r">`;
+    if(reported){
+      const tags=[];
+      if(e.promo)tags.push(`<span class="mtag promo">📢${e.promo}</span>`);
+      if(e.inc)tags.push(`<span class="mtag inc">🤝${e.inc}</span>`);
+      if(e.note)tags.push(`<span class="mtag note">⚠️${e.note}</span>`);
+      if(e.etc)tags.push(`<span class="mtag etc">📝${e.etc}</span>`);
+      h+=`${tags.join('')}<span class="mtime">${fmtTime(e.last)}</span>`;
+    } else {
+      h+=`<span class="mwait">미보고</span>`;
+    }
+    h+=`</div></div>`;
+  });
+  h+=`</div></div>`;
+  return h;
+}
+function selectMember(scope,name){
+  if(scope==='lead'){ leadMemberFilter = (leadMemberFilter===name)?null:name; renderLead(); }
+  else { headMemberFilter = (headMemberFilter===name)?null:name; renderHead(); }
+}
+
+/* ===== 공용 대시보드 컴포넌트 ===== */
+function statRow(reps){
+  const promo=reps.filter(r=>r.sections.promo).length;
+  const inc=reps.filter(r=>r.sections.inc).length;
+  const note=reps.filter(r=>r.sections.note).length;
+  return `<div class="stats">
+    <div class="stat b"><div class="n">${reps.length}</div><div class="l">오늘 보고</div></div>
+    <div class="stat g"><div class="n">${promo}</div><div class="l">프로모션</div></div>
+    <div class="stat o"><div class="n">${inc}</div><div class="l">인센티브</div></div>
+    <div class="stat p"><div class="n">${note}</div><div class="l">특이사항</div></div>
+  </div>`;
+}
+function filterBar(scope){
+  const f = scope==='lead'?leadFilter:headFilter;
+  const set = scope==='lead'?'leadFilter':'headFilter';
+  const re = scope==='lead'?'renderLead':'renderHead';
+  const opts=[['all','전체'],['promo','📢 프로모션'],['inc','🤝 인센티브'],['note','⚠️ 특이사항'],['etc','📝 기타']];
+  return `<div class="filter-bar">${opts.map(([k,l])=>`<button class="${f===k?'on':''}" onclick="${set}='${k}';${re}()">${l}</button>`).join('')}</div>`;
+}
+function emptyState(){
+  return `<div class="empty"><div class="ic">📭</div><p>아직 들어온 보고가 없습니다</p></div>`;
+}
+function feedCard(r,scope,filter){
+  filter = filter || 'all';
+  const showAll = filter==='all';
+  const init=r.name.slice(0,1);
+  let h=`<div class="feed-item"><div class="fi-head">
+    <div class="fi-who"><div class="avatar">${init}</div>
+    <div><div class="nm">${r.name}</div><div class="mt">${r.team} · ${r.dept}</div></div></div>
+    <div class="fi-time">${timeAgo(r.ts)}<br>${fmtTime(r.ts)}${r.editedAt?'<br><span style="color:var(--acc2)">✏️ 수정됨</span>':''}</div></div>`;
+  // 배지 — 필터가 걸려있으면 해당 항목 배지만 표시
+  h+=`<div class="badges">`;
+  if(r.sections.promo && (showAll||filter==='promo'))h+=`<span class="bdg promo">📢 프로모션</span>`;
+  if(r.sections.inc && (showAll||filter==='inc'))h+=`<span class="bdg inc">🤝 인센티브</span>`;
+  if(r.sections.note && (showAll||filter==='note'))h+=`<span class="bdg note">⚠️ 특이사항${r.note.urgency==='긴급'||r.note.urgency==='높음'?' '+r.note.urgency:''}</span>`;
+  if(r.sections.etc && (showAll||filter==='etc'))h+=`<span class="bdg etc">📝 기타</span>`;
+  h+= r.target==='leaddept'?`<span class="bdg dh">팀장+부서장</span>`:`<span class="bdg tl">팀장</span>`;
+  h+=`</div>`;
+  // 대리점
+  if(r.agencies.length) h+=`<div class="ag-pills">${r.agencies.map(n=>`<span>🏪 ${n}</span>`).join('')}</div>`;
+  // 방문유형/논의상품군/후속조치 (공통 항목) — 필터와 무관하게 항상 표시
+  if((r.visitTypes||[]).length || (r.productLines||[]).length || (r.followUps||[]).length){
+    h+=`<div class="fi-section"><div class="fi-kv">
+      <span class="k">방문유형</span><span class="v">${(r.visitTypes||[]).join(', ')||'-'}</span>
+      <span class="k">논의상품군</span><span class="v">${(r.productLines||[]).join(', ')||'-'}</span>
+      <span class="k">후속조치</span><span class="v">${(r.followUps||[]).join(', ')||'-'}</span></div></div>`;
+  }
+  // 내용 — 필터가 걸려있으면 해당 항목 내용만 표시
+  if(r.sections.promo && (showAll||filter==='promo')){const p=r.promo;
+    h+=`<div class="fi-section"><div class="st">📢 프로모션 성과</div>
+      <div class="fi-kv"><span class="k">프로모션</span><span class="v">${esc(p.name)||'-'}</span>
+      <span class="k">채널/횟수</span><span class="v">${chLbl(p.channel)} · ${p.count}회</span>
+      <span class="k">도달/예약</span><span class="v">${p.reach}명 · ${p.bookings}건</span>
+      <span class="k">금액/평가</span><span class="v">${p.amount}만원 · ${p.result}</span></div>
+      ${p.memo?`<div class="fi-body" style="margin-top:6px">${esc(p.memo)}</div>`:''}</div>`;
+  }
+  if(r.sections.inc && (showAll||filter==='inc')){const c=r.inc;
+    h+=`<div class="fi-section"><div class="st">🤝 인센티브 성과</div>
+      <div class="fi-kv"><span class="k" style="color:var(--ok)">✅ 체결 금액</span><span class="v">${c.signedAmt}만원</span>
+      <span class="k" style="color:var(--ok)">✅ 체결 인원</span><span class="v">${c.signedCount||0}명</span></div>
+      ${c.signNote?`<div class="fi-body" style="margin-top:6px">· 체결: ${esc(c.signNote)}</div>`:''}
+      ${c.unsignNote?`<div class="fi-body">· 미체결: ${esc(c.unsignNote)}</div>`:''}</div>`;
+  }
+  if(r.sections.note && (showAll||filter==='note')){
+    const col=r.note.urgency==='긴급'?'var(--bad)':r.note.urgency==='높음'?'var(--warn)':'var(--acc)';
+    h+=`<div class="fi-section"><div class="st" style="color:${col}">⚠️ 대리점 특이사항 · ${r.note.urgency}</div>
+      <div class="fi-body">${esc(r.note.text)}</div></div>`;
+  }
+  if(r.sections.etc && (showAll||filter==='etc')){
+    h+=`<div class="fi-section"><div class="st">📝 기타 보고</div><div class="fi-body">${esc(r.etc.text)}</div></div>`;
+  }
+  h+=`</div>`;
+  return h;
+}
+
+/* 팀원 한 명을 선택했을 때, 대리점별/항목별로 여러 건이 흩어져 나오는 아래
+   상세 카드들과는 별개로, 상단에 "이 사람이 제출한 전체 보고"를 한눈에
+   훑어볼 수 있는 아주 간략한 표를 보여준다. (상세 카드는 그대로 유지) */
+function summarizeReportLine(r){
+  const parts=[];
+  if(r.sections.promo){ const p=r.promo||{};
+    parts.push(`📢 ${chLbl(p.channel)}·예약${p.bookings||0}건·${p.amount||0}만원·${p.result||'-'}`);
+  }
+  if(r.sections.inc){ const c=r.inc||{};
+    parts.push(`🤝 체결${c.signedAmt||0}만원/${c.signedCount||0}명`);
+  }
+  if(r.sections.note){ const n=r.note||{};
+    parts.push(`⚠️(${n.urgency||'-'}) ${(n.text||'').slice(0,24)}${(n.text||'').length>24?'…':''}`);
+  }
+  if(r.sections.etc){ const et=r.etc||{};
+    parts.push(`📝 ${(et.text||'').slice(0,24)}${(et.text||'').length>24?'…':''}`);
+  }
+  return parts.join(' · ') || '-';
+}
+function compactSummaryTable(reps){
+  if(!reps.length) return '';
+  const sorted = reps.slice().sort((a,b)=> b.ts - a.ts);
+  const rows = sorted.map(r=>`<tr>
+    <td>${esc(fmtDate(r.ts))} ${esc(fmtTime(r.ts))}</td>
+    <td>${esc((r.agencies||[]).join(', ')||'-')}</td>
+    <td>${esc(summarizeReportLine(r))}</td>
+  </tr>`).join('');
+  return `<div class="card mini-tbl-card">
+    <div class="mini-tbl-title">📋 요약 표 (${reps.length}건) <span style="font-weight:400;color:var(--mut);font-size:11px">— 아래는 대리점·항목별 상세 카드입니다</span></div>
+    <div class="mini-tbl-wrap"><table class="mini-tbl">
+      <thead><tr><th>일시</th><th>대리점</th><th>핵심 내용</th></tr></thead>
+      <tbody>${rows}</tbody>
+    </table></div>
+  </div>`;
+}
+
+/* ============================================================
+   📥 엑셀 다운로드 (팀장/부서장) — 현재 화면에 표시 중인 것과 동일한
+   기간 + (선택했다면) 팀원 + 항목 필터가 적용된 데이터를 그대로
+   엑셀(.xlsx) 파일로 내려받습니다. 데이터 출처는 Apps Script(구글시트)에
+   쌓인 실데이터(REPORTS)이며, 날짜 오름차순으로 정렬해서 담습니다.
+   (SheetJS 라이브러리 사용 — cdnjs, 무료)
+   ============================================================ */
+function exportExcel(scope){
+  if(typeof XLSX==='undefined'){
+    toast('⚠️ 엑셀 다운로드 기능을 불러오지 못했습니다 — 인터넷 연결을 확인하고 새로고침 해보세요');
+    return;
+  }
+  const who = scope==='lead' ? leadWho : headWho;
+  const period = scope==='lead' ? leadPeriod : headPeriod;
+  const memberFilter = scope==='lead' ? leadMemberFilter : headMemberFilter;
+  const catFilter = scope==='lead' ? leadFilter : headFilter;
+  const mineAll = scope==='lead'
+    ? REPORTS.filter(r=>r.teamLead===who)
+    : REPORTS.filter(r=>r.deptHead===who && r.target==='leaddept');
+  let rows = mineAll.filter(r=>inPeriod(r.ts,period,scope));
+  if(catFilter!=='all') rows = rows.filter(r=>r.sections[catFilter]);
+  if(memberFilter) rows = rows.filter(r=>r.name===memberFilter);
+  if(!rows.length){ toast('⚠️ 선택한 조건에 다운로드할 데이터가 없습니다'); return; }
+  rows = rows.slice().sort((a,b)=> new Date(a.ts) - new Date(b.ts)); // 날짜 오름차순 정렬(솔팅)
+
+  const sheetRows = rows.map(r=>({
+    '일시': fmtDate(new Date(r.ts))+' '+fmtTime(new Date(r.ts)),
+    '담당자': r.name, '팀': r.team, '부서': r.dept,
+    '보고대상': r.target==='leaddept'?'팀장+부서장':'팀장',
+    '대리점': (r.agencies||[]).join(', '),
+    '방문유형': (r.visitTypes||[]).join(', '),
+    '논의상품군': (r.productLines||[]).join(', '),
+    '후속조치': (r.followUps||[]).join(', '),
+    '프로모션명': r.sections.promo ? (r.promo.name||'') : '',
+    '프로모션 채널': r.sections.promo ? chLbl(r.promo.channel) : '',
+    '프로모션 예약건수': r.sections.promo ? (r.promo.bookings||0) : '',
+    '프로모션 금액(만원)': r.sections.promo ? (r.promo.amount||0) : '',
+    '프로모션 평가': r.sections.promo ? (r.promo.result||'') : '',
+    '프로모션 메모': r.sections.promo ? (r.promo.memo||'') : '',
+    '인센티브 체결금액(만원)': r.sections.inc ? (r.inc.signedAmt||0) : '',
+    '인센티브 체결인원': r.sections.inc ? (r.inc.signedCount||0) : '',
+    '인센티브 메모': r.sections.inc ? (r.inc.signNote||'') : '',
+    '특이사항 긴급도': r.sections.note ? (r.note.urgency||'') : '',
+    '특이사항 내용': r.sections.note ? (r.note.text||'') : '',
+    '기타': r.sections.etc ? (r.etc.text||'') : '',
+    '수정여부': r.editedAt ? '수정됨' : '',
+    '작성 소요시간': r.durationSec!=null ? fmtDuration(r.durationSec) : ''
+  }));
+
+  const ws = XLSX.utils.json_to_sheet(sheetRows);
+  ws['!cols'] = Object.keys(sheetRows[0]).map(k=>({wch: Math.max(10, k.length+4)}));
+  const wb = XLSX.utils.book_new();
+  XLSX.utils.book_append_sheet(wb, ws, '보고내역');
+
+  const safe = s => String(s||'').replace(/[\/\\?%*:|"<>]/g,'');
+  const pLabel = safe(periodLabel(scope));
+  const whoLabel = safe(memberFilter || who);
+  const fname = `세일즈리포트_${whoLabel}_${pLabel}.xlsx`;
+  XLSX.writeFile(wb, fname);
+  toast(`📥 엑셀 다운로드 완료 (${rows.length}건)`);
+}
+
+/* ===== 유틸 ===== */
+function esc(s){return (s||'').replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));}
+/* 홍보 채널 표시용 — 배열(신규, 중복선택) / 문자열(과거 데이터) 모두 지원 */
+function chLbl(ch){ return (Array.isArray(ch)?ch.join(', '):ch) || '-'; }
+function fmtDate(d){return `${d.getFullYear()}.${p2(d.getMonth()+1)}.${p2(d.getDate())} (${'일월화수목금토'[d.getDay()]})`;}
+function fmtTime(d){return `${p2(d.getHours())}:${p2(d.getMinutes())}`;}
+function syncLbl(){ return lastSync ? ` · 동기화 ${fmtTime(lastSync)}` : ''; }
+function p2(n){return String(n).padStart(2,'0');}
+function timeAgo(d){const m=Math.floor((Date.now()-d.getTime())/60000);
+  if(m<1)return '방금';if(m<60)return m+'분 전';const h=Math.floor(m/60);if(h<24)return h+'시간 전';return Math.floor(h/24)+'일 전';}
+function toast(msg){
+  const t=document.createElement('div');t.className='toast';t.innerHTML=`<span class="live-dot"></span>${msg}`;
+  document.getElementById('toastHost').appendChild(t);
+  setTimeout(()=>t.remove(),2200);
+}
+
+/* 샘플 데이터는 더 이상 클라이언트에서 생성하지 않습니다.
+   실데이터는 Google Sheets("Reports" 탭)에서 loadReports()로 불러옵니다. */
+
+</script>
+</body>
+</html>
